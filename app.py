@@ -77,9 +77,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
             image_id = uuid.uuid4()
 
-            # filename = self.headers.get('Filename')
-        #     print(filename)
-        #
+
             with open(f'images/{image_id}.jpg', 'wb') as f:
                 f.write(file_content)
 
