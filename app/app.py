@@ -1,11 +1,12 @@
-import email
 import re
-from email.policy import default
-from email.policy import HTTP
+import sys
 import uuid
 from http.server import HTTPServer, BaseHTTPRequestHandler
+from loguru import logger
 
-import logger
+logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {message}")
+
+# import logger
 
 SERVER_ADDR = ('localhost', 8000)
 
@@ -47,15 +48,18 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path in ('/', '/index.html'):
+            logger.info(f'GET {self.path}')
             self.send_response(200)
             self.send_header('Content-type', 'text/html; charset=utf-8')
             self.end_headers()
             self.wfile.write(open('index.html', 'rb').read())
         else:
+            logger.warning(f'GET {self.path}')
             self.send_response(400)
 
     def do_POST(self):
         if self.path == '/upload':
+            logger.info(f'POST {self.path}')
             content_length = int(self.headers.get('Content-Length', 0))
 
             #Проверяем Content-Type, через форму должен прйти multipart/form-data
@@ -78,15 +82,26 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             image_id = uuid.uuid4()
 
 
-            with open(f'images/{image_id}.jpg', 'wb') as f:
+            with open(f'app/images/{image_id}.jpg', 'wb') as f:
                 f.write(file_content)
 
+            logger.info(f'Upload succes {self.path}')
             self.send_response(201)
             self.send_header('Location', f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/images/{image_id}.jpg')
             self.end_headers()
 
         else:
             self.send_response(405, 'Method not Allowed')
+
+
+    def do_images_GET(self):
+        if self.path in ('/images', '/images.html'):
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(open('images.html', 'rb').read())
+        else:
+            self.send_response(400)
 
 
 
