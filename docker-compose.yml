@@ -20,8 +20,7 @@ services:
 
   nginx:
     container_name: nginx
-    command:
-      - nginx -g "daemon off;"
+    command: "nginx -g daemon off;"
     image: nginx:latest
     ports:
       - "80:80"
