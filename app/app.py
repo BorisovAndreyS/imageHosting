@@ -74,7 +74,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
     server_version = 'ImageHosting'
 
     def do_GET(self):
-        if self.path == '/gallery':
+        if self.path == '/images':
             directory = 'images'
             base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/images'
             image_files = get_image_files(directory)
