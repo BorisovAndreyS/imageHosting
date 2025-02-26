@@ -3,6 +3,7 @@ import sys
 import uuid
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from loguru import logger
+from pathlib import Path
 
 logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {message}")
 
@@ -88,16 +89,13 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             return
 
         if self.path == '/upload':
-            directory = 'upload'
-            base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/upload'
-            image_files = get_image_files(directory)
-
-            html_content = generate_gallery_page(image_files, base_url)
+            # directory = 'upload'
+            # base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/upload'
 
             self.send_response(200)
             self.send_header('Content-Type', 'text/html')
             self.end_headers()
-            self.wfile.write(html_content.encode('utf-8'))
+            self.wfile.write(open('upload.html', 'rb').read())
             return
         # if self.path in ('/', '/index.html'):
         #     logger.info(f'GET {self.path}')
