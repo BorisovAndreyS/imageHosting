@@ -73,7 +73,9 @@ def parse_multipart_form_data(headers, rfile, content_length):
 
 class ImageHostingHandler(BaseHTTPRequestHandler):
     server_version = 'ImageHosting'
-
+    routes = {
+        '/':'index'
+    }
     def do_GET(self):
         if self.path == '/images':
             directory = 'images'
@@ -87,6 +89,20 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(html_content.encode('utf-8'))
             return
+
+        if self.path.startswith('/images/'):
+            file_path = Path('images') / self.path.split('/')[-1]
+            if file_path.exists():
+                with open(file_path, 'rb') as f:
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'text/html')
+                    self.end_headers()
+                    self.wfile.write(f.read())
+                return
+
+        self.send_response(404)
+        self.end_headers()
+        self.wfile.write(b'Not Found')
 
         if self.path == '/upload':
             # directory = 'upload'
