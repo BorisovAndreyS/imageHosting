@@ -1,6 +1,6 @@
 networks:
   default:
-    driver:bridge
+    driver: bridge
 
 volumes:
   images:
