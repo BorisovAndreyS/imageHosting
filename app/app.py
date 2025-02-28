@@ -77,6 +77,13 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
     #     '/':'index'
     # }
     def do_GET(self):
+        if self.path == '/':
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(b'<h1>hello world</h1>')
+            return
+
         if self.path == '/images':
             directory = 'images'
             base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/images'
@@ -102,7 +109,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
 
 
-        if self.path in ('/upload'):
+        if self.path == '/upload':
             # directory = 'upload'
             # base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/upload'
 
@@ -176,7 +183,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
 
 def run():
-    server_address = ('0.0.0.0', 8000)
+    server_address = ('localhost', 8000)
     httpd = HTTPServer(server_address, ImageHostingHandler)
     try:
         print(f'Serving at http://{server_address[0]}:{server_address[1]}')
