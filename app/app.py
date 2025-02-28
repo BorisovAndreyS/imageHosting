@@ -9,7 +9,7 @@ logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {mes
 
 # import logger
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
-SERVER_ADDR = ('app', 8000)
+SERVER_ADDR = ('localhost', 8000)
 
 #Функция для генерации HTML страницы каталога
 def generate_gallery_page(image_files, base_url):
@@ -176,7 +176,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
 
 def run():
-    server_address = ('localhost', 8000)
+    server_address = ('0.0.0.0', 8000)
     httpd = HTTPServer(server_address, ImageHostingHandler)
     try:
         print(f'Serving at http://{server_address[0]}:{server_address[1]}')
