@@ -9,7 +9,7 @@ logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {mes
 
 # import logger
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
-SERVER_ADDR = ('0.0.0.0', 8000)
+SERVER_ADDR = ('localhost', 8000)
 
 #Функция для генерации HTML страницы каталога
 def generate_gallery_page(image_files, base_url):
@@ -77,13 +77,6 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
     #     '/':'index'
     # }
     def do_GET(self):
-        # if self.path == '/':
-        #     self.send_response(200)
-        #     self.send_header('Content-Type', 'text/html; charset=utf-8')
-        #     self.end_headers()
-        #     self.wfile.write(b'<h1>hello world</h1>')
-        #     return
-
         if self.path == '/images':
             directory = 'images'
             base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/images'
