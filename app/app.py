@@ -7,7 +7,7 @@ from pathlib import Path
 
 logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {message}")
 
-# import logger
+# import logger - РАБОТАЕТ!!!!!
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 SERVER_ADDR = ('0.0.0.0', 8000)
 
