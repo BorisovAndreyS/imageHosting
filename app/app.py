@@ -9,7 +9,7 @@ logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {mes
 
 # import logger
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
-SERVER_ADDR = ('localhost', 8000)
+SERVER_ADDR = ('0.0.0.0', 8000)
 
 #Функция для генерации HTML страницы каталога
 def generate_gallery_page(image_files, base_url):
@@ -77,7 +77,8 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
     #     '/':'index'
     # }
     def do_GET(self):
-        if self.path == '/images':
+        logger.info(f'GET {self.path}')
+        if self.path == '/images/':
             directory = 'images'
             base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/images'
             image_files = get_image_files(directory)
@@ -102,7 +103,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
 
 
-        if self.path == '/upload':
+        if self.path == '/upload/':
             # directory = 'upload'
             # base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/upload'
 
@@ -126,7 +127,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         self.wfile.write(b'Not Found')
 
     def do_POST(self):
-        if self.path == '/upload':
+        if self.path == '/upload/':
             logger.info(f'POST {self.path}')
             content_length = int(self.headers.get('Content-Length', 0))
 
@@ -176,7 +177,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
 
 def run():
-    server_address = ('localhost', 8000)
+    server_address = ('', 8000)
     httpd = HTTPServer(server_address, ImageHostingHandler)
     try:
         print(f'Serving at http://{server_address[0]}:{server_address[1]}')
