@@ -127,8 +127,9 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         self.wfile.write(b'Not Found')
 
     def do_POST(self):
+        logger.info(f'POST пришел такой запрос {self.path}')
         if self.path == '/upload/':
-            logger.info(f'POST {self.path}')
+            # logger.info(f'POST {self.path}')
             content_length = int(self.headers.get('Content-Length', 0))
 
             if content_length == 0:
@@ -157,7 +158,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             image_id = uuid.uuid4()
 
 
-            with open(f'app/images/{image_id}.jpg', 'wb') as f:
+            with open(f'images/{image_id}.jpg', 'wb') as f:
                 f.write(file_content)
 
             logger.info(f'Upload succes {self.path}')
