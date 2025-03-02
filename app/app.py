@@ -77,7 +77,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
     #     '/':'index'
     # }
     def do_GET(self):
-        logger.info(f'GET {self.path}')
+        logger.info(f'GET пришел вот как!!!{self.path}')
         if self.path in '/images':
             directory = 'images'
             base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/images'
@@ -164,7 +164,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
             logger.info(f'Upload succes {self.path}')
             self.send_response(201)
-            self.send_header('Location', f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/images/{image_id}.jpg')
+            self.send_header('Location', f'/{image_id}.jpg')
             self.end_headers()
 
         else:
