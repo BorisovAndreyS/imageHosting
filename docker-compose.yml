@@ -25,9 +25,10 @@ services:
     ports:
       - "80:80"
     volumes:
+      - images:/images
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./app/index.html:/usr/share/nginx/html/index.html
-      - images:/images
+      - ./favicon.ico:/images/favicon.ico
     networks:
       - default
 
