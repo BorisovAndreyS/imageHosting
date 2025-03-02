@@ -9,7 +9,7 @@ logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {mes
 
 # import logger - РАБОТАЕТ!!!!!
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
-SERVER_ADDR = ('0.0.0.0', 8000)
+SERVER_ADDR = ('localhost', 8000)
 
 #Функция для генерации HTML страницы каталога
 def generate_gallery_page(image_files, base_url):
