@@ -81,6 +81,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         if self.path in '/images':
             directory = 'images'
             base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/images'
+            logger.info(f'base_url {base_url}')
             image_files = get_image_files(directory)
 
             html_content = generate_gallery_page(image_files, base_url)
@@ -158,7 +159,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             image_id = uuid.uuid4()
 
 
-            with open(f'/{image_id}.jpg', 'wb') as f:
+            with open(f'images/{image_id}.jpg', 'wb') as f:
                 f.write(file_content)
 
             logger.info(f'Upload succes {self.path}')
