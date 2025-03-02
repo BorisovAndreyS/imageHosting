@@ -78,7 +78,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
     # }
     def do_GET(self):
         logger.info(f'GET {self.path}')
-        if self.path == '/images/':
+        if self.path in '/images':
             directory = 'images'
             base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/images'
             image_files = get_image_files(directory)
@@ -103,7 +103,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
 
 
-        if self.path == '/upload/':
+        if self.path in '/upload':
             # directory = 'upload'
             # base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/upload'
 
@@ -128,7 +128,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         logger.info(f'POST пришел такой запрос {self.path}')
-        if self.path == '/upload/':
+        if self.path == '/upload':
             # logger.info(f'POST {self.path}')
             content_length = int(self.headers.get('Content-Length', 0))
 
