@@ -80,7 +80,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         logger.info(f'GET пришел вот как!!!{self.path}')
         if self.path in '/images':
             directory = 'images'
-            base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/images'
+            base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/'
             logger.info(f'base_url {base_url}')
             image_files = get_image_files(directory)
 
