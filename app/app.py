@@ -17,9 +17,9 @@ SERVER_ADDR = ('0.0.0.0', 8000)
 
 #Функция для генерации HTML страницы каталога
 def generate_gallery_page(image_files):
-    html = '<!DOCTYPE html>\n<html>\n<head>\n<title>Image Gallery</title>\n</head>\n<body>\n'
+    html = '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Image Gallery</title>\n</head>\n<body>\n'
     html += '<h1>Uploaded Images</h1>\n'
-    html += '<button onclick="location.href=''">Главная</button>\n'
+    html += '<button onclick="location.href=''"><p>Главная</p></button>\n'
     html += '<div style="display: flex; flex-wrap: wrap;">\n'
 
     for filename in image_files:
