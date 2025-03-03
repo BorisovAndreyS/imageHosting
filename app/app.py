@@ -13,6 +13,22 @@ MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 
 
 SERVER_ADDR = ('0.0.0.0', 8000)
+#Функция генерации HTML после успешной загрузки картинки
+def generate_upload_success_page(image_id):
+    html = '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Успешная загрузка</title>\n</head>\n<body>\n'
+    html += '<h1>Файл успешно загружен</h1>\n'
+
+    # Миниатюра изображения
+    html += f'<img src="/images/{image_id}.jpg" alt="Загруженная картинка" style="max-width: 300px; max-height: 300px;">\n'
+
+    # Ссылка на скачивание
+    html += f'<p><a href="/images/{image_id}.jpg" download>Скачать</a></p>\n'
+
+    # Ссылка на галерею
+    html += '<p><a href="/images">Каталог</a></p>\n'
+
+    html += '</body>\n</html>'
+    return html
 
 
 #Функция для генерации HTML страницы каталога
@@ -136,7 +152,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         return
 
     def post_upload(self):
-        # logger.info(f'POST {self.path}')
+        logger.info(f'POST {self.path}')
         content_length = int(self.headers.get('Content-Length', 0))
 
         if content_length == 0:
@@ -168,9 +184,15 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             f.write(file_content)
 
         logger.info(f'Upload succes {self.path}')
-        self.send_response(201)
-        self.send_header('Location', f'/{image_id}.jpg')
+        # Генерируем HTML-страницу с миниатюрой и ссылками
+        html_content = generate_upload_success_page(image_id)
+
+        # Отправляем HTML-страницу в ответ
+        self.send_response(200)  # OK
+        self.send_header('Content-Type', 'text/html')
+        self.send_header('Content-Length', len(html_content.encode('utf-8')))
         self.end_headers()
+        self.wfile.write(html_content.encode('utf-8'))
 
 
 def run():
