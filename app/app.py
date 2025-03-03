@@ -19,6 +19,7 @@ SERVER_ADDR = ('0.0.0.0', 8000)
 def generate_gallery_page(image_files):
     html = '<!DOCTYPE html>\n<html>\n<head>\n<title>Image Gallery</title>\n</head>\n<body>\n'
     html += '<h1>Uploaded Images</h1>\n'
+    html += '<button onclick="location.href='/'">Главная</button>'
     html += '<div style="display: flex; flex-wrap: wrap;">\n'
 
     for filename in image_files:
