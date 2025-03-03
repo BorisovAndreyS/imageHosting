@@ -13,8 +13,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - images:/app/images
-      - logs:/app/logs
+      - images:/app/images:rw
+      - logs:/app/logs:rw
     networks:
       - default
 
@@ -25,10 +25,10 @@ services:
     ports:
       - "80:80"
     volumes:
-      - images:/usr/share/nginx/images
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./app/index.html:/usr/share/nginx/html/index.html
-      - ./favicon.ico:/images/favicon.ico
+      - images:/usr/share/nginx/images:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./app/index.html:/usr/share/nginx/html/index.html:ro
+      - ./favicon.ico:/usr/share/nginx/images/favicon.ico:ro
     networks:
       - default
 

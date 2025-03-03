@@ -4,12 +4,25 @@ import uuid
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from loguru import logger
 from pathlib import Path
+import socket
 
 logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {message}")
 
 # import logger - РАБОТАЕТ!!!!!
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
-SERVER_ADDR = ('192.168.14.112', 80)
+
+
+# SERVER_ADDR = ('0.0.0.0', 80)
+
+def get_server_address(port=8000):
+    hostname = socket.gethostname()  # Получаем имя хоста
+    ip_address = socket.gethostbyname(hostname)  # Преобразуем имя хоста в IP-адрес
+    return (ip_address, port)
+
+
+SERVER_ADDR = get_server_address(8000)
+logger.info(f"Server address: {SERVER_ADDR[0]}:{SERVER_ADDR[1]}")
+
 
 #Функция для генерации HTML страницы каталога
 def generate_gallery_page(image_files, base_url):
@@ -27,6 +40,8 @@ def generate_gallery_page(image_files, base_url):
 
     html += '</div>\n</body>\n</html>'
     return html
+
+
 #Функция для формирования списка файлов
 def get_image_files(directory):
     image_extensions = ['.jpg', '.jpeg', '.png', '.gif']
@@ -37,6 +52,7 @@ def get_image_files(directory):
             image_files.append(file_path.name)
 
     return image_files
+
 
 # Парсер для распаковки multipart/form-data данных отправленных с формы
 def parse_multipart_form_data(headers, rfile, content_length):
@@ -73,6 +89,7 @@ def parse_multipart_form_data(headers, rfile, content_length):
 
 class ImageHostingHandler(BaseHTTPRequestHandler):
     server_version = 'ImageHosting'
+
     # routes = {
     #     '/':'index'
     # }
@@ -80,7 +97,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         logger.info(f'GET пришел вот как!!!{self.path}')
         if self.path in '/images':
             directory = 'images'
-            base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}/'
+            base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}'
             logger.info(f'base_url {base_url}')
             image_files = get_image_files(directory)
 
@@ -101,8 +118,6 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         #             self.end_headers()
         #             self.wfile.write(f.read())
         #         return
-
-
 
         if self.path in '/upload':
             # directory = 'upload'
@@ -158,7 +173,6 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
             image_id = uuid.uuid4()
 
-
             with open(f'images/{image_id}.jpg', 'wb') as f:
                 f.write(file_content)
 
@@ -171,25 +185,17 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             self.send_response(405, 'Method not Allowed')
 
 
-
-
-
-
-
-
-
 def run():
+
     server_address = ('', 8000)
     httpd = HTTPServer(server_address, ImageHostingHandler)
     try:
-        print(f'Serving at http://{server_address[0]}:{server_address[1]}')
+        print(f'Serving at http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}')
         httpd.serve_forever()
     except Exception:
         pass
     finally:
         httpd.server_close()
-
-
 
 
 if __name__ == '__main__':
