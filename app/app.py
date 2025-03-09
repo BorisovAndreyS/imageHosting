@@ -1,5 +1,4 @@
 import re
-import sys
 import uuid
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from loguru import logger
@@ -11,9 +10,10 @@ logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {mes
 # import logger - РАБОТАЕТ!!!!!
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 
-
 SERVER_ADDR = ('0.0.0.0', 8000)
-#Функция генерации HTML после успешной загрузки картинки
+
+
+# Функция генерации HTML после успешной загрузки картинки
 def generate_upload_success_page(image_id):
     html = '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Успешная загрузка</title>\n</head>\n<body>\n'
     html += '<h1>Файл успешно загружен</h1>\n'
@@ -31,7 +31,7 @@ def generate_upload_success_page(image_id):
     return html
 
 
-#Функция для генерации HTML страницы каталога
+# Функция для генерации HTML страницы каталога
 def generate_gallery_page(image_files):
     html = '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Image Gallery</title>\n</head>\n<body>\n'
     html += '<h1>Uploaded Images</h1>\n'
@@ -47,13 +47,14 @@ def generate_gallery_page(image_files):
         html += f'    <img src="/images/{filename}" alt="{filename}" style="max-width: 200px; max-height: 200px;">\n'
         html += f'  </a>\n'
         html += f'  <p>{filename}</p>\n'
+        html += f'<p><a href="/images/{filename}.jpg" download>Скачать</a></p>\n'
         html += '</div>\n'
 
     html += '</div>\n</body>\n</html>'
     return html
 
 
-#Функция для формирования списка файлов
+# Функция для формирования списка файлов
 def get_image_files(directory):
     image_extensions = ['.jpg', '.jpeg', '.png', '.gif']
     image_files = []
@@ -62,7 +63,7 @@ def get_image_files(directory):
         if file_path.is_file() and file_path.suffix.lower() in image_extensions:
             image_files.append(file_path.name)
 
-    return image_files
+    return image_files, image_extensions
 
 
 # Парсер для распаковки multipart/form-data данных отправленных с формы
@@ -109,6 +110,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
     routes_POST = {
         '/upload': 'post_upload',
     }
+
     def do_GET(self):
         logger.info(f'GET {self.path}')
         if self.path in self.routes_GET:
@@ -116,8 +118,6 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         else:
             logger.warning(f'GET 404 {self.path}')
             self.send_response(404, 'Not found')
-
-
 
     def do_POST(self):
         logger.info(f'POST пришел такой запрос {self.path}')
@@ -128,13 +128,9 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'Not Found')
 
-
-
     def get_images(self):
         directory = 'images'
-        base_url = f'http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}'
-        logger.info(f'base_url {base_url}')
-        image_files = get_image_files(directory)
+        image_files, image_extension = get_image_files(directory)
 
         html_content = generate_gallery_page(image_files)
 
@@ -178,9 +174,11 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             file_content = self.rfile.read(content_length)
             filename = None
 
+        extension = filename.split(sep='.')
+
         image_id = uuid.uuid4()
 
-        with open(f'images/{image_id}.jpg', 'wb') as f:
+        with open(f'images/{image_id}.{extension[-1]}', 'wb') as f:
             f.write(file_content)
 
         logger.info(f'Upload succes {self.path}')
@@ -196,7 +194,6 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
 
 def run():
-
     server_address = ('', 8000)
     httpd = HTTPServer(server_address, ImageHostingHandler)
     try:
