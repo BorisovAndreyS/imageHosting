@@ -8,7 +8,7 @@ import socket
 logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {message}")
 
 # import logger - РАБОТАЕТ!!!!!
-MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+MAX_FILE_SIZE = 5 * 1024 * 1024  # 10 MB
 
 SERVER_ADDR = ('0.0.0.0', 8000)
 
@@ -56,7 +56,7 @@ def generate_gallery_page(image_files):
 
 # Функция для формирования списка файлов
 def get_image_files(directory):
-    image_extensions = ['.jpg', '.jpeg', '.png', '.gif']
+    image_extensions = ImageHostingHandler.image_extensions
     image_files = []
 
     for file_path in Path(directory).iterdir():
@@ -101,6 +101,7 @@ def parse_multipart_form_data(headers, rfile, content_length):
 
 class ImageHostingHandler(BaseHTTPRequestHandler):
     server_version = 'ImageHosting'
+    image_extensions = ['.jpg', '.jpeg', '.png', '.gif']
 
     routes_GET = {
         '/images': 'get_images',
@@ -120,11 +121,12 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             self.send_response(404, 'Not found')
 
     def do_POST(self):
-        logger.info(f'POST пришел такой запрос {self.path}')
+        logger.info(f'POST {self.path}')
         if self.path in self.routes_POST:
             exec(f'self.{self.routes_POST[self.path]}()')
         else:
             self.send_response(404)
+            logger.warning(f'POST 404 {self.path}')
             self.end_headers()
             self.wfile.write(b'Not Found')
 
@@ -176,12 +178,19 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
         extension = filename.split(sep='.')
 
+        if extension not in ImageHostingHandler.image_extensions:
+            logger.error(f"Ошибка: неподдерживаемый формат файла .{extension[-1]}.")
+            self.send_response(400)  # Bad Request
+            self.end_headers()
+            return
+
+
         image_id = uuid.uuid4()
 
         with open(f'images/{image_id}.{extension[-1]}', 'wb') as f:
             f.write(file_content)
 
-        logger.info(f'Upload succes {self.path}')
+        logger.info(f'Успех: Изображение {image_id}.{extension[-1]} загружено')
         # Генерируем HTML-страницу с миниатюрой и ссылками
         html_content = generate_upload_success_page(image_id)
 
@@ -197,7 +206,6 @@ def run():
     server_address = ('', 8000)
     httpd = HTTPServer(server_address, ImageHostingHandler)
     try:
-        print(f'Serving at http://{SERVER_ADDR[0]}:{SERVER_ADDR[1]}')
         httpd.serve_forever()
     except Exception:
         pass
