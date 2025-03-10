@@ -49,7 +49,7 @@ def generate_gallery_page(image_files):
         html += f'    <img src="/images/{filename}" alt="{filename}" style="max-width: 200px; max-height: 200px;">\n'
         html += f'  </a>\n'
         html += f'  <p>{filename}</p>\n'
-        html += f'<p><a href="/images/{filename}.jpg" download>Скачать</a></p>\n'
+        html += f'<p><a href="/images/{filename}" download>Скачать</a></p>\n'
         html += '</div>\n'
 
     html += '</div>\n</body>\n</html>'
