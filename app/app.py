@@ -52,81 +52,81 @@ def generate_upload_success_page(image_id, ext):
 
 
 # Функция для генерации HTML страницы каталога
+# def generate_gallery_page(image_files):
+#     html = '''<!DOCTYPE html>
+#     <html lang="ru">
+#     <head>
+#     <meta charset="UTF-8">
+#     <meta name="viewport" content="width=device-width, initial-scale=1">
+#     <title>Image Gallery</title>
+#     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+#     <style>
+#         .image-item {
+#             transition: transform 0.2s; /* Добавляем плавную анимацию при наведении */
+#         }
+#
+#         .image-item:hover {
+#             transform: scale(1.05); /* Увеличиваем масштаб элемента при наведении */
+#         }
+#     </style>
+#     </head>
+#     <body class="bg-light">
+#     <div class="container py-5">
+#         <h1 class="text-center mb-4">Загруженные изображения</h1>
+#         <div class="text-center mb-3">
+#             <a href="/" class="btn btn-primary">Главная</a>
+#         </div>
+#         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+#     '''
+#
+#     for filename in image_files:
+#         html += f'''
+#             <div class="col">
+#                 <div class="card shadow-sm image-item">
+#                     <a href="/images/{filename}" target="_blank">
+#                         <img src="" alt="{filename}" class="bd-placeholder-img card-img-top" style="object-fit: cover;
+#                         height: 200px;">
+#                     </a>
+#                     <div class="card-body">
+#                         <p class="card-text text-center">{filename}</p>
+#                         <div class="d-flex justify-content-center align-items-center">
+#                             <a href="/images/{filename}" download class="btn btn-sm btn-outline-secondary">Скачать</a>
+#                         </div>
+#                     </div>
+#                 </div>
+#             </div>
+#         '''
+#
+#     html += '''
+#         </div>
+#     </div>
+#     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+#     </body>
+#     </html>
+#     '''
+#     return html
 def generate_gallery_page(image_files):
-    html = '''<!DOCTYPE html>
-    <html lang="ru">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Image Gallery</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .image-item {
-            transition: transform 0.2s; /* Добавляем плавную анимацию при наведении */
-        }
+    html = '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Image Gallery</title>\n</head>\n<body>\n'
+    html += '<h1>Uploaded Images</h1>\n'
+    html += '<a href="/" style="text-decoration: none;">\n'
+    html += '  <button><p>Главная</p></button>\n'
+    html += '</a>\n'
 
-        .image-item:hover {
-            transform: scale(1.05); /* Увеличиваем масштаб элемента при наведении */
-        }
-    </style>
-    </head>
-    <body class="bg-light">
-    <div class="container py-5">
-        <h1 class="text-center mb-4">Загруженные изображения</h1>
-        <div class="text-center mb-3">
-            <a href="/" class="btn btn-primary">Главная</a>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    '''
+
+    html += '<div style="display: flex; flex-wrap: wrap;">\n'
 
     for filename in image_files:
-        html += f'''
-            <div class="col">
-                <div class="card shadow-sm image-item">
-                    <a href="/images/{filename}" target="_blank">
-                        <img src="" alt="/images/{filename}" class="bd-placeholder-img card-img-top" style="object-fit: cover; 
-                        height: 200px;">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text text-center">{filename}</p>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <a href="/images/{filename}" download class="btn btn-sm btn-outline-secondary">Скачать</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        '''
+        html += f'<div style="margin: 10px; text-align: center;">\n'
+        html += f'  <a href="/images/{filename}" target="_blank">\n'  # Используем относительный путь
+        html += f'    <img src="/images/{filename}" alt="{filename}" style="max-width: 200px; max-height: 200px;">\n'
+        html += f'  </a>\n'
+        html += f'  <p>{filename}</p>\n'
+        html += f'<p><a href="/images/{filename}" download>Скачать</a></p>\n'
+        html += '</div>\n'
 
-    html += '''
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    </html>
-    '''
+    html += '</div>\n</body>\n</html>'
+
     return html
-# def generate_gallery_page(image_files):
-#     # html = '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Image Gallery</title>\n</head>\n<body>\n'
-#     # html += '<h1>Uploaded Images</h1>\n'
-#     # html += '<a href="/" style="text-decoration: none;">\n'
-#     # html += '  <button><p>Главная</p></button>\n'
-#     # html += '</a>\n'
-#     #
-#     #
-#     # html += '<div style="display: flex; flex-wrap: wrap;">\n'
-#     #
-#     # for filename in image_files:
-#     #     html += f'<div style="margin: 10px; text-align: center;">\n'
-#     #     html += f'  <a href="/images/{filename}" target="_blank">\n'  # Используем относительный путь
-#     #     html += f'    <img src="/images/{filename}" alt="{filename}" style="max-width: 200px; max-height: 200px;">\n'
-#     #     html += f'  </a>\n'
-#     #     html += f'  <p>{filename}</p>\n'
-#     #     html += f'<p><a href="/images/{filename}" download>Скачать</a></p>\n'
-#     #     html += '</div>\n'
-#     #
-#     # html += '</div>\n</body>\n</html>'
-#
-#     return html
 
 
 # Функция для формирования списка файлов
