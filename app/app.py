@@ -34,13 +34,13 @@ def generate_upload_success_page(image_id, ext):
 
     # Миниатюра изображения
     html += (f'<img src="/images/{image_id}.{ext}" alt="Загруженное изображение" '
-             f'class="img-fluid mb-4" style="max-width: 300px; height: auto;">\n')
+             f'class="img-fluid text-center mb-4" style="max-width: 300px; height: auto;">\n')
 
     # Группа кнопок
     html += '<div class="d-flex justify-content-center mb-3">\n'
     html += f'<a href="/images/{image_id}.{ext}" download class="btn btn-primary me-2">Скачать</a>\n'
     html += f'<a href="/upload" class="btn btn-outline-secondary me-2">Загрузить еще</a>\n'
-    html += '<a href="/images" class="btn btn-outline-secondary ">Каталог</a>\n'
+    html += '<a href="/images" class="btn btn-outline-secondary me-2">Каталог</a>\n'
     html += '</div>\n'
 
     html += '</div>'
