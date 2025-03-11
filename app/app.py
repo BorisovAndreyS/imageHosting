@@ -48,7 +48,7 @@ def generate_upload_success_page(image_id, ext):
     # Ссылка для вставки (пустое поле, которое будет заполнено JavaScript)
     html += '<div class="mb-3">\n'
     html += '<label for="image-url" class="form-label">Ссылка для вставки:</label>\n'
-    html += '<input type="text" id="image-url" class="form-control" value = "121223" readonly>\n'
+    html += f'<input type="text" id="image-url" class="form-control" value = "/images/{image_id}.{ext}" readonly>\n'
     html += '<button class="btn btn-sm btn-success mt-2 w-100" onclick="copyUrl()">Скопировать ссылку</button>\n'
     html += '</div>\n'
 
