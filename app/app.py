@@ -14,15 +14,17 @@ MAX_FILE_SIZE = 5 * 1024 * 1024  # 10 MB
 
 
 # Функция генерации HTML после успешной загрузки картинки
-def generate_upload_success_page(image_id):
-    html = '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Успешная загрузка</title>\n</head>\n<body>\n'
+def generate_upload_success_page(image_id, ext):
+    html = ('<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Успешная загрузка</title>\n</head>\n'
+            '<body class="d-flex min-vh-100 justify-content-center align-items-center bg-light">\n')
+    html += '<div class="content-box bg-white col-12 col-md-8 col-lg-6 p-4 rounded-3 shadow">'
     html += '<h1>Файл успешно загружен</h1>\n'
-
+    html += '</div>'
     # Миниатюра изображения
-    html += f'<img src="/images/{image_id}.jpg" alt="Загруженная картинка" style="max-width: 300px; max-height: 300px;">\n'
+    html += f'<img src="/images/{image_id}.{ext}" alt="Загруженная картинка" style="max-width: 300px; max-height: 300px;">\n'
 
     # Ссылка на скачивание
-    html += f'<p><a href="/images/{image_id}.jpg" download>Скачать</a></p>\n'
+    html += f'<p><a href="/images/{image_id}.{ext}" download>Скачать</a></p>\n'
 
     # Ссылка на галерею
     html += '<p><a href="/images">Каталог</a></p>\n'
@@ -47,7 +49,7 @@ def generate_gallery_page(image_files):
         html += f'    <img src="/images/{filename}" alt="{filename}" style="max-width: 200px; max-height: 200px;">\n'
         html += f'  </a>\n'
         html += f'  <p>{filename}</p>\n'
-        html += f'<p><a href="/images/{filename}.jpg" download>Скачать</a></p>\n'
+        html += f'<p><a href="/images/{filename}" download>Скачать</a></p>\n'
         html += '</div>\n'
 
     html += '</div>\n</body>\n</html>'
@@ -56,11 +58,11 @@ def generate_gallery_page(image_files):
 
 # Функция для формирования списка файлов
 def get_image_files(directory):
-    image_extensions = ImageHostingHandler.image_extensions
+    image_extensions = ''
     image_files = []
 
     for file_path in Path(directory).iterdir():
-        if file_path.is_file() and file_path.suffix.lower() in image_extensions:
+        if file_path.is_file() and file_path.suffix.lower() in IMAGE_EXTENSION:
             image_files.append(file_path.name)
 
     return image_files, image_extensions
@@ -101,7 +103,7 @@ def parse_multipart_form_data(headers, rfile, content_length):
 
 class ImageHostingHandler(BaseHTTPRequestHandler):
     server_version = 'ImageHosting'
-    image_extensions = ['.jpg', '.jpeg', '.png', '.gif']
+
 
     routes_GET = {
         '/images': 'get_images',
@@ -137,7 +139,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         html_content = generate_gallery_page(image_files)
 
         self.send_response(200)
-        self.send_header('Content-Type', 'text/html')
+        self.send_header('Content-Type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(html_content.encode('utf-8'))
         return
@@ -163,7 +165,6 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         content_type = self.headers.get('Content-Type', '')
 
         if 'multipart/form-data' in content_type:
-
             try:
                 filename, file_content = parse_multipart_form_data(self.headers, self.rfile, content_length)
             except ValueError as e:
@@ -176,23 +177,22 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             file_content = self.rfile.read(content_length)
             filename = None
 
-        extension = filename.split(sep='.')
+        extension = filename.split('.')[-1]
 
-        if extension not in ImageHostingHandler.image_extensions:
-            logger.error(f"Ошибка: неподдерживаемый формат файла .{extension[-1]}.")
+        if f".{extension}" not in IMAGE_EXTENSION:
+            logger.error(f"Ошибка: неподдерживаемый формат файла .{extension}.")
             self.send_response(400)  # Bad Request
             self.end_headers()
             return
 
-
         image_id = uuid.uuid4()
 
-        with open(f'images/{image_id}.{extension[-1]}', 'wb') as f:
+        with open(f'images/{image_id}.{extension}', 'wb') as f:
             f.write(file_content)
 
-        logger.info(f'Успех: Изображение {image_id}.{extension[-1]} загружено')
+        logger.info(f'Успех: Изображение {image_id}.{extension} загружено')
         # Генерируем HTML-страницу с миниатюрой и ссылками
-        html_content = generate_upload_success_page(image_id)
+        html_content = generate_upload_success_page(image_id, extension)
 
         # Отправляем HTML-страницу в ответ
         self.send_response(200)  # OK

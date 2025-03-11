@@ -28,7 +28,7 @@ services:
       - images:/usr/share/nginx/images:ro
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./app/index.html:/usr/share/nginx/html/index.html:ro
-      - ./favicon.ico:/usr/share/nginx/html/favicon.ico:ro
+      - ./favicon.ico:/usr/share/nginx/html/favicon.ico
     networks:
       - default
 
