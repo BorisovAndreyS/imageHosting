@@ -7,9 +7,10 @@ import socket
 
 logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {message}")
 
-
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 10 MB
 IMAGE_EXTENSION = ['.jpg', '.jpeg', '.png', '.gif']
+
+
 # SERVER_ADDR = ('0.0.0.0', 8000)
 
 
@@ -38,13 +39,9 @@ def generate_upload_success_page(image_id, ext):
     # Группа кнопок
     html += '<div class="d-flex justify-content-center mb-3">\n'
     html += f'<a href="/images/{image_id}.{ext}" download class="btn btn-primary me-2">Скачать</a>\n'
-    html += f'<a href="/upload" class="btn btn-outline-secondary">Загрузить еще</a>\n'
+    html += f'<a href="/upload" class="btn btn-outline-secondary me-2">Загрузить еще</a>\n'
     html += '<a href="/images" class="btn btn-outline-secondary ">Каталог</a>\n'
     html += '</div>\n'
-
-
-
-
 
     html += '</div>'
 
@@ -122,7 +119,6 @@ def parse_multipart_form_data(headers, rfile, content_length):
 
 class ImageHostingHandler(BaseHTTPRequestHandler):
     server_version = 'ImageHosting'
-
 
     routes_GET = {
         '/images': 'get_images',
