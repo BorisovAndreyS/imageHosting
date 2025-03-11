@@ -39,16 +39,12 @@ def generate_upload_success_page(image_id, ext):
     html += '<div class="d-flex justify-content-center mb-3">\n'
     html += f'<a href="/images/{image_id}.{ext}" download class="btn btn-primary me-2">Скачать</a>\n'
     html += f'<a href="/upload" class="btn btn-outline-secondary">Загрузить еще</a>\n'
+    html += '<a href="/images" class="btn btn-outline-secondary ">Каталог</a>\n'
     html += '</div>\n'
 
-    # Ссылка на галерею
-    html += '<p class="text-center mb-4"><a href="/images" class="text-decoration-none">Каталог</a></p>\n'
 
-    # Ссылка для вставки
-    html += '<div class="mb-3">\n'
-    html += f'<input type="text" class="form-control" id="image-url" value="/images/{image_id}.{ext}" readonly>\n'
-    # html += '<button class="btn btn-sm btn-success mt-2" onclick="copyUrl()">Скопировать ссылку</button>\n'
-    html += '</div>\n'
+
+
 
     html += '</div>'
 
