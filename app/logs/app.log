@@ -1,0 +1,967 @@
+[2025-02-22 10:12:30] | WARNING | GET /favicon.ico
+[2025-02-22 10:12:30] | INFO | POST /upload
+[2025-02-22 10:12:31] | INFO | POST /upload
+[2025-02-26 19:59:21] | INFO | POST /upload
+[2025-02-26 19:59:21] | INFO | POST /upload
+[2025-03-02 09:28:50] | INFO | GET /
+[2025-03-02 09:29:27] | INFO | GET /
+[2025-03-02 09:29:29] | INFO | GET /
+[2025-03-02 09:29:34] | INFO | GET /upload
+[2025-03-02 09:29:36] | INFO | GET /upload
+[2025-03-02 09:29:39] | INFO | GET /upload/
+[2025-03-02 09:29:54] | INFO | POST прищел такой запрос /upload
+[2025-03-02 09:29:54] | INFO | POST прищел такой запрос /upload
+[2025-03-02 09:31:35] | INFO | POST прищел такой запрос /upload
+[2025-03-02 09:31:41] | INFO | GET /images
+[2025-03-02 09:31:44] | INFO | GET /upload/
+[2025-03-02 09:31:48] | INFO | POST прищел такой запрос /upload/
+[2025-03-02 09:31:48] | INFO | POST прищел такой запрос /upload/
+[2025-03-02 09:31:48] | INFO | POST прищел такой запрос /upload/
+[2025-03-02 09:32:05] | INFO | GET /upload/
+[2025-03-02 09:32:09] | INFO | POST прищел такой запрос /upload/
+[2025-03-02 09:32:09] | INFO | POST прищел такой запрос /upload/
+[2025-03-02 09:33:23] | INFO | POST пришел такой запрос /upload/
+[2025-03-02 09:33:32] | INFO | GET /upload
+[2025-03-02 09:33:32] | INFO | GET /upload
+[2025-03-02 09:33:34] | INFO | GET /upload.
+[2025-03-02 09:33:37] | INFO | GET /upload
+[2025-03-02 09:33:38] | INFO | GET /upload/
+[2025-03-02 09:33:41] | INFO | POST пришел такой запрос /upload/
+[2025-03-02 09:33:41] | INFO | POST пришел такой запрос /upload/
+[2025-03-02 09:33:42] | INFO | POST пришел такой запрос /upload/
+[2025-03-02 09:34:13] | INFO | GET /
+[2025-03-02 09:34:16] | INFO | GET /upload/
+[2025-03-02 09:34:20] | INFO | POST пришел такой запрос /upload/
+[2025-03-02 09:34:20] | INFO | Upload succes /upload/
+[2025-03-03 09:25:34] | INFO | Server address: 192.168.14.169:8000
+[2025-03-03 09:29:06] | INFO | Server address: 192.168.14.169:8000
+[2025-03-03 09:29:56] | INFO | Server address: 192.168.14.169:8000
+[2025-03-03 09:29:58] | INFO | GET пришел вот как!!!/
+[2025-03-03 09:29:58] | INFO | base_url http://192.168.14.169:8000
+[2025-03-03 09:29:58] | INFO | GET пришел вот как!!!/favicon.ico
+[2025-03-03 14:13:08] | INFO | Server address: 192.168.14.169:8000
+[2025-03-03 14:13:12] | INFO | GET /
+[2025-03-03 14:13:12] | WARNING | GET 404 /
+[2025-03-03 14:13:13] | INFO | GET /
+[2025-03-03 14:13:13] | WARNING | GET 404 /
+[2025-03-03 14:13:13] | INFO | GET /
+[2025-03-03 14:13:13] | WARNING | GET 404 /
+[2025-03-03 14:13:13] | INFO | GET /
+[2025-03-03 14:13:13] | WARNING | GET 404 /
+[2025-03-03 14:13:14] | INFO | GET /
+[2025-03-03 14:13:14] | WARNING | GET 404 /
+[2025-03-03 14:13:14] | INFO | GET /
+[2025-03-03 14:13:14] | WARNING | GET 404 /
+[2025-03-03 14:13:14] | INFO | GET /
+[2025-03-03 14:13:14] | WARNING | GET 404 /
+[2025-03-03 14:13:19] | INFO | GET /
+[2025-03-03 14:13:19] | WARNING | GET 404 /
+[2025-03-03 14:13:21] | INFO | GET /upload
+[2025-03-03 14:13:21] | INFO | GET /favicon.ico
+[2025-03-03 14:13:21] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:13:21] | INFO | GET /favicon.ico
+[2025-03-03 14:13:21] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:13:25] | INFO | GET /images
+[2025-03-03 14:13:25] | INFO | base_url http://192.168.14.169:8000
+[2025-03-03 14:13:25] | INFO | GET /favicon.ico
+[2025-03-03 14:13:25] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:13:25] | INFO | GET /favicon.ico
+[2025-03-03 14:13:25] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:13:25] | INFO | GET /favicon.ico
+[2025-03-03 14:13:25] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:17:23] | INFO | GET /favicon.ico
+[2025-03-03 14:17:23] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:17:23] | INFO | GET /favicon.ico
+[2025-03-03 14:17:23] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:17:23] | INFO | GET /favicon.ico
+[2025-03-03 14:17:23] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:17:29] | INFO | GET /upload
+[2025-03-03 14:17:29] | INFO | GET /favicon.ico
+[2025-03-03 14:17:29] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:17:29] | INFO | GET /favicon.ico
+[2025-03-03 14:17:29] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:17:33] | INFO | POST пришел такой запрос /upload
+[2025-03-03 14:17:53] | INFO | POST пришел такой запрос /upload
+[2025-03-03 14:17:53] | INFO | Upload succes /upload
+[2025-03-03 14:17:53] | INFO | GET /favicon.ico
+[2025-03-03 14:17:53] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:17:53] | INFO | GET /favicon.ico
+[2025-03-03 14:17:53] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:18:03] | INFO | GET /images
+[2025-03-03 14:18:03] | INFO | base_url http://0.0.0.0:8000
+[2025-03-03 14:18:03] | INFO | GET /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:03] | WARNING | GET 404 /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:03] | INFO | GET /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:03] | WARNING | GET 404 /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:03] | INFO | GET /favicon.ico
+[2025-03-03 14:18:03] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:18:06] | INFO | GET /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:06] | WARNING | GET 404 /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:07] | INFO | GET /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:07] | WARNING | GET 404 /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:07] | INFO | GET /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:07] | WARNING | GET 404 /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:07] | INFO | GET /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:07] | WARNING | GET 404 /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:12] | INFO | GET /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:12] | WARNING | GET 404 /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:42] | INFO | GET /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:42] | WARNING | GET 404 /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:42] | INFO | GET /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:18:42] | WARNING | GET 404 /location.host/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:17] | INFO | GET /images
+[2025-03-03 14:21:17] | INFO | base_url http://0.0.0.0:8000
+[2025-03-03 14:21:18] | INFO | GET /images
+[2025-03-03 14:21:18] | INFO | base_url http://0.0.0.0:8000
+[2025-03-03 14:21:18] | INFO | GET /images
+[2025-03-03 14:21:18] | INFO | base_url http://0.0.0.0:8000
+[2025-03-03 14:21:18] | INFO | GET /images
+[2025-03-03 14:21:18] | INFO | base_url http://0.0.0.0:8000
+[2025-03-03 14:21:23] | INFO | GET /images
+[2025-03-03 14:21:23] | INFO | base_url http://0.0.0.0:8000
+[2025-03-03 14:21:44] | INFO | GET /images
+[2025-03-03 14:21:44] | INFO | base_url http://0.0.0.0:8000
+[2025-03-03 14:21:44] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:44] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:44] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:44] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:44] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:44] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:44] | INFO | GET /favicon.ico
+[2025-03-03 14:21:44] | WARNING | GET 404 /favicon.ico
+[2025-03-03 14:21:46] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:46] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:47] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:47] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:47] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:47] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:47] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:47] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:52] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:21:52] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:04] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:04] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:04] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:04] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:05] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:05] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:05] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:05] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:05] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:05] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:10] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:10] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:22] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:22] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:22] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:22] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:22] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:22] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:23] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:23] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:28] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:28] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:28] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-03 14:22:28] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-04 17:46:03] | INFO | GET /
+[2025-03-04 17:46:03] | WARNING | GET 404 /
+[2025-03-04 17:46:04] | INFO | GET /upload/
+[2025-03-04 17:46:04] | WARNING | GET 404 /upload/
+[2025-03-04 17:46:05] | INFO | GET /upload/
+[2025-03-04 17:46:05] | WARNING | GET 404 /upload/
+[2025-03-04 17:46:06] | INFO | GET /upload/
+[2025-03-04 17:46:06] | WARNING | GET 404 /upload/
+[2025-03-04 17:46:06] | INFO | GET /upload/
+[2025-03-04 17:46:06] | WARNING | GET 404 /upload/
+[2025-03-04 17:46:06] | INFO | GET /upload/
+[2025-03-04 17:46:06] | WARNING | GET 404 /upload/
+[2025-03-04 17:46:11] | INFO | GET /upload/
+[2025-03-04 17:46:11] | WARNING | GET 404 /upload/
+[2025-03-04 17:46:11] | INFO | GET /upload/
+[2025-03-04 17:46:11] | WARNING | GET 404 /upload/
+[2025-03-04 17:46:11] | INFO | GET /upload/
+[2025-03-04 17:46:11] | WARNING | GET 404 /upload/
+[2025-03-04 17:46:13] | INFO | GET /upload
+[2025-03-04 17:46:13] | INFO | GET /favicon.ico
+[2025-03-04 17:46:13] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:46:20] | INFO | POST пришел такой запрос /upload
+[2025-03-04 17:46:20] | INFO | POST /upload
+[2025-03-04 17:46:20] | INFO | Upload succes /upload
+[2025-03-04 17:46:20] | INFO | GET /images/29ffff00-e69b-41d1-9770-a8e86bde51d1.jpg
+[2025-03-04 17:46:20] | WARNING | GET 404 /images/29ffff00-e69b-41d1-9770-a8e86bde51d1.jpg
+[2025-03-04 17:46:21] | INFO | GET /favicon.ico
+[2025-03-04 17:46:21] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:47:12] | INFO | GET /upload
+[2025-03-04 17:47:12] | INFO | GET /favicon.ico
+[2025-03-04 17:47:12] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:47:23] | INFO | POST пришел такой запрос /upload
+[2025-03-04 17:47:23] | INFO | POST /upload
+[2025-03-04 17:47:23] | INFO | Upload succes /upload
+[2025-03-04 17:47:23] | INFO | GET /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-04 17:47:23] | WARNING | GET 404 /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-04 17:47:23] | INFO | GET /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-04 17:47:23] | WARNING | GET 404 /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-04 17:47:24] | INFO | GET /favicon.ico
+[2025-03-04 17:47:24] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:47:47] | INFO | GET /upload
+[2025-03-04 17:47:47] | INFO | GET /favicon.ico
+[2025-03-04 17:47:47] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:47:48] | INFO | GET /favicon.ico
+[2025-03-04 17:47:48] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:47:54] | INFO | POST пришел такой запрос /upload
+[2025-03-04 17:47:54] | INFO | POST /upload
+[2025-03-04 17:47:54] | INFO | Upload succes /upload
+[2025-03-04 17:47:54] | INFO | GET /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-04 17:47:54] | WARNING | GET 404 /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-04 17:47:55] | INFO | GET /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-04 17:47:55] | WARNING | GET 404 /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-04 17:47:55] | INFO | GET /favicon.ico
+[2025-03-04 17:47:55] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:51:32] | INFO | GET /upload
+[2025-03-04 17:51:32] | INFO | GET /favicon.ico
+[2025-03-04 17:51:32] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:51:32] | INFO | GET /favicon.ico
+[2025-03-04 17:51:32] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:51:39] | INFO | POST пришел такой запрос /upload
+[2025-03-04 17:51:39] | INFO | POST /upload
+[2025-03-04 17:51:39] | INFO | Upload succes /upload
+[2025-03-04 17:51:39] | INFO | GET /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-04 17:51:39] | WARNING | GET 404 /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-04 17:51:39] | INFO | GET /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-04 17:51:39] | WARNING | GET 404 /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-04 17:51:39] | INFO | GET /favicon.ico
+[2025-03-04 17:51:39] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:52:11] | INFO | GET /upload
+[2025-03-04 17:52:13] | INFO | GET /upload/
+[2025-03-04 17:52:13] | WARNING | GET 404 /upload/
+[2025-03-04 17:52:14] | INFO | GET /favicon.ico
+[2025-03-04 17:52:14] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:52:14] | INFO | GET /favicon.ico
+[2025-03-04 17:52:14] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:52:15] | INFO | GET /favicon.ico
+[2025-03-04 17:52:15] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:52:15] | INFO | POST пришел такой запрос /upload
+[2025-03-04 17:52:15] | INFO | POST /upload
+[2025-03-04 17:52:15] | INFO | Upload succes /upload
+[2025-03-04 17:52:16] | INFO | GET /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-04 17:52:16] | WARNING | GET 404 /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-04 17:52:16] | INFO | GET /favicon.ico
+[2025-03-04 17:52:16] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:52:21] | INFO | GET /upload
+[2025-03-04 17:52:21] | INFO | GET /favicon.ico
+[2025-03-04 17:52:21] | WARNING | GET 404 /favicon.ico
+[2025-03-04 17:52:26] | INFO | POST пришел такой запрос /upload
+[2025-03-04 17:52:26] | INFO | POST /upload
+[2025-03-04 17:52:26] | INFO | Upload succes /upload
+[2025-03-04 17:52:26] | INFO | GET /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-04 17:52:26] | WARNING | GET 404 /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-04 17:52:26] | INFO | GET /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-04 17:52:26] | WARNING | GET 404 /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-04 17:52:27] | INFO | GET /favicon.ico
+[2025-03-04 17:52:27] | WARNING | GET 404 /favicon.ico
+[2025-03-05 09:12:38] | INFO | GET /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-05 09:12:38] | WARNING | GET 404 /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-05 09:12:38] | INFO | GET /favicon.ico
+[2025-03-05 09:12:38] | WARNING | GET 404 /favicon.ico
+[2025-03-05 09:12:38] | INFO | GET /favicon.ico
+[2025-03-05 09:12:38] | WARNING | GET 404 /favicon.ico
+[2025-03-09 10:12:01] | INFO | GET /upload
+[2025-03-09 10:12:01] | INFO | GET /favicon.ico
+[2025-03-09 10:12:01] | WARNING | GET 404 /favicon.ico
+[2025-03-09 10:12:02] | INFO | GET /favicon.ico
+[2025-03-09 10:12:02] | WARNING | GET 404 /favicon.ico
+[2025-03-09 10:12:19] | INFO | POST /upload
+[2025-03-09 10:12:19] | INFO | POST /upload
+[2025-03-09 10:12:19] | INFO | Успех: Изображение aefe12d3-8c8e-42b8-bcbf-378340866b0d.pdf загружено
+[2025-03-09 10:12:19] | INFO | GET /images/aefe12d3-8c8e-42b8-bcbf-378340866b0d.jpg
+[2025-03-09 10:12:19] | WARNING | GET 404 /images/aefe12d3-8c8e-42b8-bcbf-378340866b0d.jpg
+[2025-03-09 10:12:19] | INFO | GET /images/aefe12d3-8c8e-42b8-bcbf-378340866b0d.jpg
+[2025-03-09 10:12:19] | WARNING | GET 404 /images/aefe12d3-8c8e-42b8-bcbf-378340866b0d.jpg
+[2025-03-09 10:12:19] | INFO | GET /favicon.ico
+[2025-03-09 10:12:19] | WARNING | GET 404 /favicon.ico
+[2025-03-09 10:13:55] | INFO | GET /images/aefe12d3-8c8e-42b8-bcbf-378340866b0d.jpg
+[2025-03-09 10:13:55] | WARNING | GET 404 /images/aefe12d3-8c8e-42b8-bcbf-378340866b0d.jpg
+[2025-03-09 10:13:58] | INFO | GET /images/aefe12d3-8c8e-42b8-bcbf-378340866b0d.jpg
+[2025-03-09 10:13:58] | WARNING | GET 404 /images/aefe12d3-8c8e-42b8-bcbf-378340866b0d.jpg
+[2025-03-09 10:13:59] | INFO | GET /images/aefe12d3-8c8e-42b8-bcbf-378340866b0d.jpg
+[2025-03-09 10:13:59] | WARNING | GET 404 /images/aefe12d3-8c8e-42b8-bcbf-378340866b0d.jpg
+[2025-03-09 10:14:43] | INFO | GET /images
+[2025-03-09 10:14:44] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-09 10:14:44] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-09 10:14:44] | INFO | GET /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-09 10:14:44] | WARNING | GET 404 /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-09 10:14:44] | INFO | GET /images/29ffff00-e69b-41d1-9770-a8e86bde51d1.jpg
+[2025-03-09 10:14:44] | WARNING | GET 404 /images/29ffff00-e69b-41d1-9770-a8e86bde51d1.jpg
+[2025-03-09 10:14:44] | INFO | GET /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-09 10:14:44] | WARNING | GET 404 /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-09 10:14:44] | INFO | GET /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-09 10:14:44] | WARNING | GET 404 /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-09 10:14:44] | INFO | GET /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-09 10:14:44] | WARNING | GET 404 /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-09 10:14:44] | INFO | GET /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-09 10:14:44] | WARNING | GET 404 /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-09 10:14:44] | INFO | GET /favicon.ico
+[2025-03-09 10:14:44] | WARNING | GET 404 /favicon.ico
+[2025-03-09 10:23:57] | INFO | GET /
+[2025-03-09 10:23:57] | WARNING | GET 404 /
+[2025-03-09 10:23:58] | INFO | GET /
+[2025-03-09 10:23:58] | WARNING | GET 404 /
+[2025-03-09 10:23:58] | INFO | GET /
+[2025-03-09 10:23:58] | WARNING | GET 404 /
+[2025-03-09 10:23:59] | INFO | GET /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-09 10:23:59] | WARNING | GET 404 /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-09 10:23:59] | INFO | GET /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-09 10:23:59] | WARNING | GET 404 /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-09 10:23:59] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-09 10:23:59] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-09 10:23:59] | INFO | GET /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-09 10:23:59] | WARNING | GET 404 /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-09 10:23:59] | INFO | GET /images/29ffff00-e69b-41d1-9770-a8e86bde51d1.jpg
+[2025-03-09 10:23:59] | WARNING | GET 404 /images/29ffff00-e69b-41d1-9770-a8e86bde51d1.jpg
+[2025-03-09 10:23:59] | INFO | GET /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-09 10:23:59] | WARNING | GET 404 /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-09 10:23:59] | INFO | GET /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-09 10:23:59] | WARNING | GET 404 /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-09 10:23:59] | INFO | GET /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-09 10:23:59] | WARNING | GET 404 /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-09 10:23:59] | INFO | GET /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-09 10:23:59] | WARNING | GET 404 /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-09 10:23:59] | INFO | GET /favicon.ico
+[2025-03-09 10:23:59] | WARNING | GET 404 /favicon.ico
+[2025-03-09 10:24:05] | INFO | GET /
+[2025-03-09 10:24:05] | WARNING | GET 404 /
+[2025-03-09 10:24:06] | INFO | GET /
+[2025-03-09 10:24:06] | WARNING | GET 404 /
+[2025-03-09 10:24:07] | INFO | GET /
+[2025-03-09 10:24:07] | WARNING | GET 404 /
+[2025-03-09 10:24:07] | INFO | GET /
+[2025-03-09 10:24:07] | WARNING | GET 404 /
+[2025-03-09 10:24:14] | INFO | GET /upload/
+[2025-03-09 10:24:14] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:14] | INFO | GET /upload/
+[2025-03-09 10:24:14] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:14] | INFO | GET /upload/
+[2025-03-09 10:24:14] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:15] | INFO | GET /upload/
+[2025-03-09 10:24:15] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:15] | INFO | GET /upload/
+[2025-03-09 10:24:15] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:15] | INFO | GET /upload/
+[2025-03-09 10:24:15] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:20] | INFO | GET /upload/
+[2025-03-09 10:24:20] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:20] | INFO | GET /upload/
+[2025-03-09 10:24:20] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:20] | INFO | GET /upload/
+[2025-03-09 10:24:20] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:22] | INFO | GET /upload
+[2025-03-09 10:24:23] | INFO | GET /favicon.ico
+[2025-03-09 10:24:23] | WARNING | GET 404 /favicon.ico
+[2025-03-09 10:24:24] | INFO | GET /favicon.ico
+[2025-03-09 10:24:24] | WARNING | GET 404 /favicon.ico
+[2025-03-09 10:24:32] | INFO | POST /upload
+[2025-03-09 10:24:32] | INFO | POST /upload
+[2025-03-09 10:24:32] | ERROR | Ошибка: неподдерживаемый формат файла .pdf.
+[2025-03-09 10:24:41] | INFO | GET /upload/
+[2025-03-09 10:24:41] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:41] | INFO | GET /upload/
+[2025-03-09 10:24:41] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:42] | INFO | GET /upload/
+[2025-03-09 10:24:42] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:45] | INFO | GET /upload/
+[2025-03-09 10:24:45] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:45] | INFO | GET /upload/
+[2025-03-09 10:24:45] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:45] | INFO | GET /upload/
+[2025-03-09 10:24:45] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:46] | INFO | GET /upload/
+[2025-03-09 10:24:46] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:46] | INFO | GET /upload/
+[2025-03-09 10:24:46] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:46] | INFO | GET /upload/
+[2025-03-09 10:24:46] | WARNING | GET 404 /upload/
+[2025-03-09 10:24:47] | INFO | GET /upload
+[2025-03-09 10:24:47] | INFO | GET /favicon.ico
+[2025-03-09 10:24:47] | WARNING | GET 404 /favicon.ico
+[2025-03-09 11:02:42] | INFO | GET /
+[2025-03-09 11:02:42] | WARNING | GET 404 /
+[2025-03-09 11:02:43] | INFO | GET /
+[2025-03-09 11:02:43] | WARNING | GET 404 /
+[2025-03-09 11:02:43] | INFO | GET /
+[2025-03-09 11:02:43] | WARNING | GET 404 /
+[2025-03-09 11:02:43] | INFO | GET /
+[2025-03-09 11:02:43] | WARNING | GET 404 /
+[2025-03-10 17:07:28] | INFO | GET /
+[2025-03-10 17:07:28] | WARNING | GET 404 /
+[2025-03-10 17:07:29] | INFO | GET /
+[2025-03-10 17:07:29] | WARNING | GET 404 /
+[2025-03-10 17:07:29] | INFO | GET /
+[2025-03-10 17:07:29] | WARNING | GET 404 /
+[2025-03-10 17:07:29] | INFO | GET /
+[2025-03-10 17:07:29] | WARNING | GET 404 /
+[2025-03-10 17:07:33] | INFO | GET /
+[2025-03-10 17:07:33] | WARNING | GET 404 /
+[2025-03-10 17:07:37] | INFO | GET /upload
+[2025-03-10 17:07:37] | INFO | GET /favicon.ico
+[2025-03-10 17:07:37] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:07:37] | INFO | GET /favicon.ico
+[2025-03-10 17:07:37] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:07:41] | INFO | POST /upload
+[2025-03-10 17:07:41] | INFO | POST /upload
+[2025-03-10 17:07:41] | ERROR | Ошибка: неподдерживаемый формат файла .jpg.
+[2025-03-10 17:07:47] | INFO | GET /
+[2025-03-10 17:07:47] | WARNING | GET 404 /
+[2025-03-10 17:07:48] | INFO | GET /
+[2025-03-10 17:07:48] | WARNING | GET 404 /
+[2025-03-10 17:07:49] | INFO | GET /
+[2025-03-10 17:07:49] | WARNING | GET 404 /
+[2025-03-10 17:07:54] | INFO | GET /
+[2025-03-10 17:07:54] | WARNING | GET 404 /
+[2025-03-10 17:07:54] | INFO | GET /
+[2025-03-10 17:07:54] | WARNING | GET 404 /
+[2025-03-10 17:07:54] | INFO | GET /
+[2025-03-10 17:07:54] | WARNING | GET 404 /
+[2025-03-10 17:08:24] | INFO | GET /
+[2025-03-10 17:08:24] | WARNING | GET 404 /
+[2025-03-10 17:08:25] | INFO | GET /
+[2025-03-10 17:08:25] | WARNING | GET 404 /
+[2025-03-10 17:12:41] | INFO | GET /favicon.ico
+[2025-03-10 17:12:41] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:12:44] | INFO | POST /upload
+[2025-03-10 17:12:44] | INFO | POST /upload
+[2025-03-10 17:12:44] | INFO | Успех: Изображение 16812e94-4350-4290-8bbf-86edacb2e40b.g загружено
+[2025-03-10 17:12:44] | INFO | GET /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:12:44] | WARNING | GET 404 /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:12:44] | INFO | GET /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:12:44] | WARNING | GET 404 /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:12:44] | INFO | GET /favicon.ico
+[2025-03-10 17:12:44] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:13:07] | INFO | GET /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:13:07] | WARNING | GET 404 /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:13:08] | INFO | GET /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:13:08] | WARNING | GET 404 /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:13:12] | INFO | GET /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:13:12] | WARNING | GET 404 /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:13:12] | INFO | GET /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:13:12] | WARNING | GET 404 /images/16812e94-4350-4290-8bbf-86edacb2e40b.jpg
+[2025-03-10 17:15:36] | INFO | POST /upload
+[2025-03-10 17:15:36] | INFO | POST /upload
+[2025-03-10 17:15:36] | INFO | Успех: Изображение 042d3b00-c8d1-4b80-8780-0fbacb495d7c.jpg загружено
+[2025-03-10 17:15:36] | INFO | GET /images/042d3b00-c8d1-4b80-8780-0fbacb495d7c.jpg
+[2025-03-10 17:15:36] | WARNING | GET 404 /images/042d3b00-c8d1-4b80-8780-0fbacb495d7c.jpg
+[2025-03-10 17:15:36] | INFO | GET /images/042d3b00-c8d1-4b80-8780-0fbacb495d7c.jpg
+[2025-03-10 17:15:36] | WARNING | GET 404 /images/042d3b00-c8d1-4b80-8780-0fbacb495d7c.jpg
+[2025-03-10 17:15:36] | INFO | GET /favicon.ico
+[2025-03-10 17:15:36] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:15:38] | INFO | GET /images
+[2025-03-10 17:15:38] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-10 17:15:38] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-10 17:15:38] | INFO | GET /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-10 17:15:38] | WARNING | GET 404 /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-10 17:15:38] | INFO | GET /images/042d3b00-c8d1-4b80-8780-0fbacb495d7c.jpg
+[2025-03-10 17:15:38] | WARNING | GET 404 /images/042d3b00-c8d1-4b80-8780-0fbacb495d7c.jpg
+[2025-03-10 17:15:38] | INFO | GET /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-10 17:15:38] | WARNING | GET 404 /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-10 17:15:38] | INFO | GET /images/29ffff00-e69b-41d1-9770-a8e86bde51d1.jpg
+[2025-03-10 17:15:38] | WARNING | GET 404 /images/29ffff00-e69b-41d1-9770-a8e86bde51d1.jpg
+[2025-03-10 17:15:38] | INFO | GET /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-10 17:15:38] | WARNING | GET 404 /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-10 17:15:38] | INFO | GET /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-10 17:15:38] | WARNING | GET 404 /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-10 17:15:38] | INFO | GET /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-10 17:15:38] | WARNING | GET 404 /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-10 17:15:39] | INFO | GET /favicon.ico
+[2025-03-10 17:15:39] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:33:21] | INFO | GET /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-10 17:33:21] | WARNING | GET 404 /images/99a3191b-cdb7-46e2-94c4-162b687429d6.jpg
+[2025-03-10 17:33:21] | INFO | GET /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-10 17:33:21] | WARNING | GET 404 /images/fc94e695-2b36-4933-afe8-b56a38dbd2a1.jpg
+[2025-03-10 17:33:21] | INFO | GET /images/042d3b00-c8d1-4b80-8780-0fbacb495d7c.jpg
+[2025-03-10 17:33:21] | WARNING | GET 404 /images/042d3b00-c8d1-4b80-8780-0fbacb495d7c.jpg
+[2025-03-10 17:33:21] | INFO | GET /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-10 17:33:21] | WARNING | GET 404 /images/0a640f8b-9083-42e2-96ba-6d239c6c89e2.jpg
+[2025-03-10 17:33:21] | INFO | GET /images/29ffff00-e69b-41d1-9770-a8e86bde51d1.jpg
+[2025-03-10 17:33:21] | WARNING | GET 404 /images/29ffff00-e69b-41d1-9770-a8e86bde51d1.jpg
+[2025-03-10 17:33:21] | INFO | GET /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-10 17:33:21] | WARNING | GET 404 /images/562b89d5-6089-4d8b-a35a-77debe64279d.jpg
+[2025-03-10 17:33:22] | INFO | GET /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-10 17:33:22] | WARNING | GET 404 /images/67fdfb39-c656-481a-9806-098100ee7e63.jpg
+[2025-03-10 17:33:22] | INFO | GET /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-10 17:33:22] | WARNING | GET 404 /images/85c8d6e6-f3cd-4d7c-a82d-e6326a29830e.jpg
+[2025-03-10 17:33:22] | INFO | GET /favicon.ico
+[2025-03-10 17:33:22] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:53:40] | INFO | GET /upload
+[2025-03-10 17:53:40] | INFO | GET /favicon.ico
+[2025-03-10 17:53:40] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:53:45] | INFO | POST /upload
+[2025-03-10 17:53:45] | INFO | POST /upload
+[2025-03-10 17:53:45] | INFO | Успех: Изображение e01f302b-8911-4194-927e-e8ef9105161c.jpg загружено
+[2025-03-10 17:53:45] | INFO | GET /images/e01f302b-8911-4194-927e-e8ef9105161c.jpg
+[2025-03-10 17:53:45] | WARNING | GET 404 /images/e01f302b-8911-4194-927e-e8ef9105161c.jpg
+[2025-03-10 17:53:45] | INFO | GET /favicon.ico
+[2025-03-10 17:53:45] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:54:28] | INFO | GET /upload
+[2025-03-10 17:54:28] | INFO | GET /favicon.ico
+[2025-03-10 17:54:28] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:54:29] | INFO | GET /favicon.ico
+[2025-03-10 17:54:29] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:54:33] | INFO | POST /upload
+[2025-03-10 17:54:33] | INFO | POST /upload
+[2025-03-10 17:54:33] | INFO | Успех: Изображение b8888b69-5263-4892-82b4-78dc27ca2171.jpg загружено
+[2025-03-10 17:54:33] | INFO | GET /images/b8888b69-5263-4892-82b4-78dc27ca2171.jpg
+[2025-03-10 17:54:33] | WARNING | GET 404 /images/b8888b69-5263-4892-82b4-78dc27ca2171.jpg
+[2025-03-10 17:54:33] | INFO | GET /images/b8888b69-5263-4892-82b4-78dc27ca2171.jpg
+[2025-03-10 17:54:33] | WARNING | GET 404 /images/b8888b69-5263-4892-82b4-78dc27ca2171.jpg
+[2025-03-10 17:54:33] | INFO | GET /favicon.ico
+[2025-03-10 17:54:33] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:55:30] | INFO | GET /upload
+[2025-03-10 17:55:30] | INFO | GET /favicon.ico
+[2025-03-10 17:55:30] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:55:30] | INFO | GET /favicon.ico
+[2025-03-10 17:55:30] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:55:31] | INFO | GET /upload/
+[2025-03-10 17:55:31] | WARNING | GET 404 /upload/
+[2025-03-10 17:55:32] | INFO | GET /upload/
+[2025-03-10 17:55:32] | WARNING | GET 404 /upload/
+[2025-03-10 17:55:32] | INFO | GET /upload/
+[2025-03-10 17:55:32] | WARNING | GET 404 /upload/
+[2025-03-10 17:55:32] | INFO | GET /upload/
+[2025-03-10 17:55:32] | WARNING | GET 404 /upload/
+[2025-03-10 17:55:33] | INFO | GET /upload
+[2025-03-10 17:55:33] | INFO | GET /favicon.ico
+[2025-03-10 17:55:33] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:55:36] | INFO | POST /upload
+[2025-03-10 17:55:36] | INFO | POST /upload
+[2025-03-10 17:55:36] | INFO | Успех: Изображение c65095a9-95eb-494a-8f84-85c837524532.jpg загружено
+[2025-03-10 17:55:37] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:55:37] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:55:37] | INFO | GET /favicon.ico
+[2025-03-10 17:55:37] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:56:12] | INFO | GET /favicon.ico
+[2025-03-10 17:56:12] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:56:12] | INFO | GET /favicon.ico
+[2025-03-10 17:56:12] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:56:14] | INFO | GET /favicon.ico
+[2025-03-10 17:56:14] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:56:14] | INFO | GET /favicon.ico
+[2025-03-10 17:56:14] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:56:14] | INFO | GET /favicon.ico
+[2025-03-10 17:56:14] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:57:08] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:57:08] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:57:14] | INFO | GET /upload
+[2025-03-10 17:57:14] | INFO | GET /favicon.ico
+[2025-03-10 17:57:14] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:57:16] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:57:16] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:57:16] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:57:16] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:57:16] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:57:16] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:57:16] | INFO | GET /favicon.ico
+[2025-03-10 17:57:16] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:57:20] | INFO | GET /images
+[2025-03-10 17:57:21] | INFO | GET /images/1.jpeg
+[2025-03-10 17:57:21] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:57:21] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:57:21] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-10 17:57:21] | INFO | GET /favicon.ico
+[2025-03-10 17:57:21] | WARNING | GET 404 /favicon.ico
+[2025-03-10 17:57:23] | INFO | GET /images/1.jpeg
+[2025-03-10 17:57:23] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:57:23] | INFO | GET /images/1.jpeg
+[2025-03-10 17:57:23] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:57:24] | INFO | GET /images/1.jpeg
+[2025-03-10 17:57:24] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:57:24] | INFO | GET /images/1.jpeg
+[2025-03-10 17:57:24] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:57:24] | INFO | GET /images/1.jpeg
+[2025-03-10 17:57:24] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:59:31] | INFO | GET /images/1.jpeg
+[2025-03-10 17:59:31] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:59:32] | INFO | GET /images/1.jpeg
+[2025-03-10 17:59:32] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:59:32] | INFO | GET /images/1.jpeg
+[2025-03-10 17:59:32] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:59:33] | INFO | GET /images/1.jpeg
+[2025-03-10 17:59:33] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:59:38] | INFO | GET /images/1.jpeg
+[2025-03-10 17:59:38] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 17:59:38] | INFO | GET /images/1.jpeg
+[2025-03-10 17:59:38] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 18:00:08] | INFO | GET /images/1.jpeg
+[2025-03-10 18:00:08] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 18:00:08] | INFO | GET /images/1.jpeg
+[2025-03-10 18:00:08] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 18:00:08] | INFO | GET /images/1.jpeg
+[2025-03-10 18:00:08] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 18:01:09] | INFO | GET /images/1.jpeg
+[2025-03-10 18:01:09] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 18:06:09] | INFO | GET /images/1.jpeg
+[2025-03-10 18:06:09] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 18:16:09] | INFO | GET /images/1.jpeg
+[2025-03-10 18:16:09] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 18:46:10] | INFO | GET /images/1.jpeg
+[2025-03-10 18:46:10] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 19:16:10] | INFO | GET /images/1.jpeg
+[2025-03-10 19:16:10] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 19:46:10] | INFO | GET /images/1.jpeg
+[2025-03-10 19:46:10] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 20:16:11] | INFO | GET /images/1.jpeg
+[2025-03-10 20:16:11] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 20:46:11] | INFO | GET /images/1.jpeg
+[2025-03-10 20:46:11] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 21:16:11] | INFO | GET /images/1.jpeg
+[2025-03-10 21:16:11] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 21:46:12] | INFO | GET /images/1.jpeg
+[2025-03-10 21:46:12] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 22:16:12] | INFO | GET /images/1.jpeg
+[2025-03-10 22:16:12] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 22:46:12] | INFO | GET /images/1.jpeg
+[2025-03-10 22:46:12] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 23:16:13] | INFO | GET /images/1.jpeg
+[2025-03-10 23:16:13] | WARNING | GET 404 /images/1.jpeg
+[2025-03-10 23:46:13] | INFO | GET /images/1.jpeg
+[2025-03-10 23:46:13] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 00:16:13] | INFO | GET /images/1.jpeg
+[2025-03-11 00:16:13] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 00:46:14] | INFO | GET /images/1.jpeg
+[2025-03-11 00:46:14] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 01:16:14] | INFO | GET /images/1.jpeg
+[2025-03-11 01:16:14] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 01:46:14] | INFO | GET /images/1.jpeg
+[2025-03-11 01:46:14] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 02:16:15] | INFO | GET /images/1.jpeg
+[2025-03-11 02:16:15] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 02:46:15] | INFO | GET /images/1.jpeg
+[2025-03-11 02:46:15] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 03:16:15] | INFO | GET /images/1.jpeg
+[2025-03-11 03:16:15] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 03:46:16] | INFO | GET /images/1.jpeg
+[2025-03-11 03:46:16] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 04:16:16] | INFO | GET /images/1.jpeg
+[2025-03-11 04:16:16] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 04:46:16] | INFO | GET /images/1.jpeg
+[2025-03-11 04:46:16] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 05:16:17] | INFO | GET /images/1.jpeg
+[2025-03-11 05:16:17] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 05:46:17] | INFO | GET /images/1.jpeg
+[2025-03-11 05:46:17] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 06:16:17] | INFO | GET /images/1.jpeg
+[2025-03-11 06:16:17] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 06:46:18] | INFO | GET /images/1.jpeg
+[2025-03-11 06:46:18] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 07:16:18] | INFO | GET /images/1.jpeg
+[2025-03-11 07:16:18] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 07:46:18] | INFO | GET /images/1.jpeg
+[2025-03-11 07:46:18] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 07:55:04] | INFO | GET /images/
+[2025-03-11 07:55:04] | WARNING | GET 404 /images/
+[2025-03-11 07:55:05] | INFO | GET /images/
+[2025-03-11 07:55:05] | WARNING | GET 404 /images/
+[2025-03-11 07:55:05] | INFO | GET /images/
+[2025-03-11 07:55:05] | WARNING | GET 404 /images/
+[2025-03-11 07:55:05] | INFO | GET /images/
+[2025-03-11 07:55:05] | WARNING | GET 404 /images/
+[2025-03-11 07:55:09] | INFO | GET /upload/
+[2025-03-11 07:55:09] | WARNING | GET 404 /upload/
+[2025-03-11 07:55:10] | INFO | GET /upload/
+[2025-03-11 07:55:10] | WARNING | GET 404 /upload/
+[2025-03-11 07:55:10] | INFO | GET /upload/
+[2025-03-11 07:55:10] | WARNING | GET 404 /upload/
+[2025-03-11 07:55:10] | INFO | GET /upload/
+[2025-03-11 07:55:10] | WARNING | GET 404 /upload/
+[2025-03-11 07:55:15] | INFO | GET /upload/
+[2025-03-11 07:55:15] | WARNING | GET 404 /upload/
+[2025-03-11 07:55:15] | INFO | GET /upload/
+[2025-03-11 07:55:15] | WARNING | GET 404 /upload/
+[2025-03-11 07:55:15] | INFO | GET /upload/
+[2025-03-11 07:55:15] | WARNING | GET 404 /upload/
+[2025-03-11 07:55:17] | INFO | GET /upload
+[2025-03-11 07:55:17] | INFO | GET /favicon.ico
+[2025-03-11 07:55:17] | WARNING | GET 404 /favicon.ico
+[2025-03-11 07:55:17] | INFO | GET /favicon.ico
+[2025-03-11 07:55:17] | WARNING | GET 404 /favicon.ico
+[2025-03-11 07:55:22] | INFO | POST /upload
+[2025-03-11 07:55:22] | INFO | POST /upload
+[2025-03-11 07:55:22] | INFO | Успех: Изображение 5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg загружено
+[2025-03-11 07:55:22] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:55:22] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:55:22] | INFO | GET /favicon.ico
+[2025-03-11 07:55:22] | WARNING | GET 404 /favicon.ico
+[2025-03-11 07:56:47] | INFO | GET /images
+[2025-03-11 07:56:47] | INFO | GET /images/1.jpeg
+[2025-03-11 07:56:47] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 07:56:48] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:48] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:48] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 07:56:48] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 07:56:48] | INFO | GET /favicon.ico
+[2025-03-11 07:56:48] | WARNING | GET 404 /favicon.ico
+[2025-03-11 07:56:48] | INFO | GET /favicon.ico
+[2025-03-11 07:56:48] | WARNING | GET 404 /favicon.ico
+[2025-03-11 07:56:53] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:53] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:54] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:54] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:55] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:55] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:55] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:55] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:55] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:56:55] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:00] | INFO | GET /
+[2025-03-11 07:57:00] | WARNING | GET 404 /
+[2025-03-11 07:57:00] | INFO | GET /
+[2025-03-11 07:57:00] | WARNING | GET 404 /
+[2025-03-11 07:57:00] | INFO | GET /
+[2025-03-11 07:57:00] | WARNING | GET 404 /
+[2025-03-11 07:57:01] | INFO | GET /
+[2025-03-11 07:57:01] | WARNING | GET 404 /
+[2025-03-11 07:57:01] | INFO | GET /
+[2025-03-11 07:57:01] | WARNING | GET 404 /
+[2025-03-11 07:57:02] | INFO | GET /
+[2025-03-11 07:57:02] | WARNING | GET 404 /
+[2025-03-11 07:57:02] | INFO | GET /images/1.jpeg
+[2025-03-11 07:57:02] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 07:57:02] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:02] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:02] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 07:57:02] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 07:57:02] | INFO | GET /favicon.ico
+[2025-03-11 07:57:02] | WARNING | GET 404 /favicon.ico
+[2025-03-11 07:57:02] | INFO | GET /favicon.ico
+[2025-03-11 07:57:02] | WARNING | GET 404 /favicon.ico
+[2025-03-11 07:57:03] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:03] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:04] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:04] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:04] | INFO | GET /favicon.ico
+[2025-03-11 07:57:04] | WARNING | GET 404 /favicon.ico
+[2025-03-11 07:57:05] | INFO | GET /images
+[2025-03-11 07:57:05] | INFO | GET /images/1.jpeg
+[2025-03-11 07:57:05] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 07:57:05] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:05] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:05] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 07:57:05] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 07:57:06] | INFO | GET /favicon.ico
+[2025-03-11 07:57:06] | WARNING | GET 404 /favicon.ico
+[2025-03-11 07:57:06] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:06] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:06] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:06] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 07:57:07] | INFO | GET /favicon.ico
+[2025-03-11 07:57:07] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:05:20] | INFO | GET /upload
+[2025-03-11 08:05:20] | INFO | GET /favicon.ico
+[2025-03-11 08:05:20] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:05:20] | INFO | GET /favicon.ico
+[2025-03-11 08:05:20] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:05:21] | INFO | POST /upload
+[2025-03-11 08:05:21] | INFO | POST /upload
+[2025-03-11 08:05:21] | INFO | Успех: Изображение b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg загружено
+[2025-03-11 08:05:21] | INFO | GET /images/b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg
+[2025-03-11 08:05:21] | WARNING | GET 404 /images/b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg
+[2025-03-11 08:05:22] | INFO | GET /images/b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg
+[2025-03-11 08:05:22] | WARNING | GET 404 /images/b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg
+[2025-03-11 08:05:22] | INFO | GET /favicon.ico
+[2025-03-11 08:05:22] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:05:23] | INFO | GET /upload
+[2025-03-11 08:05:23] | INFO | GET /favicon.ico
+[2025-03-11 08:05:23] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:05:35] | INFO | GET /images
+[2025-03-11 08:05:36] | INFO | GET /images
+[2025-03-11 08:05:36] | INFO | GET /images
+[2025-03-11 08:05:37] | INFO | GET /images
+[2025-03-11 08:05:37] | INFO | GET /favicon.ico
+[2025-03-11 08:05:37] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:05:37] | INFO | GET /favicon.ico
+[2025-03-11 08:05:37] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:05:38] | INFO | GET /images
+[2025-03-11 08:05:39] | INFO | GET /images
+[2025-03-11 08:05:40] | INFO | GET /images
+[2025-03-11 08:05:59] | INFO | GET /upload
+[2025-03-11 08:05:59] | INFO | GET /upload/
+[2025-03-11 08:05:59] | WARNING | GET 404 /upload/
+[2025-03-11 08:06:00] | INFO | GET /upload/
+[2025-03-11 08:06:00] | WARNING | GET 404 /upload/
+[2025-03-11 08:06:00] | INFO | GET /favicon.ico
+[2025-03-11 08:06:00] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:06:01] | INFO | GET /upload/
+[2025-03-11 08:06:01] | WARNING | GET 404 /upload/
+[2025-03-11 08:06:05] | INFO | GET /upload
+[2025-03-11 08:06:05] | INFO | GET /favicon.ico
+[2025-03-11 08:06:05] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:06:06] | INFO | GET /favicon.ico
+[2025-03-11 08:06:06] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:06:12] | INFO | GET /images
+[2025-03-11 08:06:12] | INFO | GET /images
+[2025-03-11 08:06:13] | INFO | GET /images
+[2025-03-11 08:06:18] | INFO | GET /images
+[2025-03-11 08:06:18] | INFO | GET /images
+[2025-03-11 08:06:19] | INFO | GET /images
+[2025-03-11 08:06:49] | INFO | GET /images
+[2025-03-11 08:06:49] | INFO | GET /images
+[2025-03-11 08:07:03] | INFO | GET /images
+[2025-03-11 08:07:03] | INFO | GET /images/1.jpeg
+[2025-03-11 08:07:03] | WARNING | GET 404 /images/1.jpeg
+[2025-03-11 08:07:03] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:07:03] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:07:03] | INFO | GET /images/b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg
+[2025-03-11 08:07:03] | WARNING | GET 404 /images/b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg
+[2025-03-11 08:07:03] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 08:07:03] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 08:07:03] | INFO | GET /favicon.ico
+[2025-03-11 08:07:03] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:12:04] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:04] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:05] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:05] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:05] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:05] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:05] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:05] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:15] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:15] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:16] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:16] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:16] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:16] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:16] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:16] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:18] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:18] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:19] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:19] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:19] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:19] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:19] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:19] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:23] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:23] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:23] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:23] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:23] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:23] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:25] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:25] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:30] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:30] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:30] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:30] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:30] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:12:30] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:08] | INFO | GET /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:08] | WARNING | GET 404 /5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:08] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:08] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:08] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:08] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:09] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:09] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:11] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:11] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:11] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:11] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:11] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:11] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:13] | INFO | GET /images/
+[2025-03-11 08:46:13] | WARNING | GET 404 /images/
+[2025-03-11 08:46:13] | INFO | GET /images/
+[2025-03-11 08:46:13] | WARNING | GET 404 /images/
+[2025-03-11 08:46:13] | INFO | GET /images/
+[2025-03-11 08:46:13] | WARNING | GET 404 /images/
+[2025-03-11 08:46:14] | INFO | GET /images/
+[2025-03-11 08:46:14] | WARNING | GET 404 /images/
+[2025-03-11 08:46:14] | INFO | GET /images/
+[2025-03-11 08:46:14] | WARNING | GET 404 /images/
+[2025-03-11 08:46:14] | INFO | GET /images/
+[2025-03-11 08:46:14] | WARNING | GET 404 /images/
+[2025-03-11 08:46:15] | INFO | GET /images
+[2025-03-11 08:46:15] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:15] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:16] | INFO | GET /images/b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg
+[2025-03-11 08:46:16] | WARNING | GET 404 /images/b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg
+[2025-03-11 08:46:16] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:16] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 08:46:16] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 08:46:16] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 08:46:16] | INFO | GET /favicon.ico
+[2025-03-11 08:46:16] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:46:20] | INFO | GET /
+[2025-03-11 08:46:20] | WARNING | GET 404 /
+[2025-03-11 08:46:21] | INFO | GET /
+[2025-03-11 08:46:21] | WARNING | GET 404 /
+[2025-03-11 08:46:22] | INFO | GET /
+[2025-03-11 08:46:22] | WARNING | GET 404 /
+[2025-03-11 08:46:22] | INFO | GET /
+[2025-03-11 08:46:22] | WARNING | GET 404 /
+[2025-03-11 08:46:22] | INFO | GET /favicon.ico
+[2025-03-11 08:46:22] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:46:26] | INFO | GET /%D0%B3%D0%B7%D0%B4%D1%89%D1%84%D0%B2
+[2025-03-11 08:46:26] | WARNING | GET 404 /%D0%B3%D0%B7%D0%B4%D1%89%D1%84%D0%B2
+[2025-03-11 08:46:26] | INFO | GET /%D0%B3%D0%B7%D0%B4%D1%89%D1%84%D0%B2
+[2025-03-11 08:46:26] | WARNING | GET 404 /%D0%B3%D0%B7%D0%B4%D1%89%D1%84%D0%B2
+[2025-03-11 08:46:27] | INFO | GET /%D0%B3%D0%B7%D0%B4%D1%89%D1%84%D0%B2
+[2025-03-11 08:46:27] | WARNING | GET 404 /%D0%B3%D0%B7%D0%B4%D1%89%D1%84%D0%B2
+[2025-03-11 08:46:29] | INFO | GET /upload
+[2025-03-11 08:46:30] | INFO | GET /favicon.ico
+[2025-03-11 08:46:30] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:46:30] | INFO | GET /favicon.ico
+[2025-03-11 08:46:30] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:46:33] | INFO | POST /upload
+[2025-03-11 08:46:33] | INFO | POST /upload
+[2025-03-11 08:46:33] | INFO | Успех: Изображение 219e52cc-189f-4fbe-893c-d8622c8a4208.jpg загружено
+[2025-03-11 08:46:34] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 08:46:34] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 08:46:34] | INFO | GET /favicon.ico
+[2025-03-11 08:46:34] | WARNING | GET 404 /favicon.ico
+[2025-03-11 08:46:39] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 08:46:39] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 08:46:40] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 08:46:40] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 08:46:43] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 08:46:43] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 08:46:43] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 08:46:43] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:50] | INFO | POST /upload
+[2025-03-11 09:43:50] | INFO | POST /upload
+[2025-03-11 09:43:50] | INFO | Успех: Изображение 3d3f6400-cedb-4034-9bc7-6e7b3e34923e.jpg загружено
+[2025-03-11 09:43:50] | INFO | GET /images/3d3f6400-cedb-4034-9bc7-6e7b3e34923e.jpg
+[2025-03-11 09:43:50] | WARNING | GET 404 /images/3d3f6400-cedb-4034-9bc7-6e7b3e34923e.jpg
+[2025-03-11 09:43:51] | INFO | GET /images/3d3f6400-cedb-4034-9bc7-6e7b3e34923e.jpg
+[2025-03-11 09:43:51] | WARNING | GET 404 /images/3d3f6400-cedb-4034-9bc7-6e7b3e34923e.jpg
+[2025-03-11 09:43:51] | INFO | GET /favicon.ico
+[2025-03-11 09:43:51] | WARNING | GET 404 /favicon.ico
+[2025-03-11 09:43:51] | INFO | GET /images
+[2025-03-11 09:43:52] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:52] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:52] | INFO | GET /images/3d3f6400-cedb-4034-9bc7-6e7b3e34923e.jpg
+[2025-03-11 09:43:52] | WARNING | GET 404 /images/3d3f6400-cedb-4034-9bc7-6e7b3e34923e.jpg
+[2025-03-11 09:43:52] | INFO | GET /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 09:43:52] | WARNING | GET 404 /images/5710ffb1-aa8d-4b6a-9fc8-f8f0fe9e3d75.jpg
+[2025-03-11 09:43:52] | INFO | GET /images/b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg
+[2025-03-11 09:43:52] | WARNING | GET 404 /images/b8d462fd-de31-4ccd-8f0c-f822d831f902.jpg
+[2025-03-11 09:43:52] | INFO | GET /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 09:43:52] | WARNING | GET 404 /images/c65095a9-95eb-494a-8f84-85c837524532.jpg
+[2025-03-11 09:43:52] | INFO | GET /favicon.ico
+[2025-03-11 09:43:52] | WARNING | GET 404 /favicon.ico
+[2025-03-11 09:43:53] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:53] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:54] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:54] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:55] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:55] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:55] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:55] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:55] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:43:55] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:44:00] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:44:00] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:44:00] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:44:00] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:44:00] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:44:00] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:44:31] | INFO | GET /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg
+[2025-03-11 09:44:31] | WARNING | GET 404 /images/219e52cc-189f-4fbe-893c-d8622c8a4208.jpg

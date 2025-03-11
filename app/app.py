@@ -8,7 +8,8 @@ import socket
 logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {message}")
 
 # import logger - РАБОТАЕТ!!!!!
-MAX_FILE_SIZE = 5 * 1024 * 1024  # 10 MB
+MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+IMAGE_EXTENSION = ['.jpg', '.jpeg', '.png', '.gif']
 
 SERVER_ADDR = ('0.0.0.0', 8000)
 
@@ -58,11 +59,11 @@ def generate_gallery_page(image_files):
 
 # Функция для формирования списка файлов
 def get_image_files(directory):
-    image_extensions = ImageHostingHandler.image_extensions
+    image_extensions = ''
     image_files = []
 
     for file_path in Path(directory).iterdir():
-        if file_path.is_file() and file_path.suffix.lower() in image_extensions:
+        if file_path.is_file() and file_path.suffix.lower() in IMAGE_EXTENSION:
             image_files.append(file_path.name)
 
     return image_files, image_extensions
@@ -103,7 +104,7 @@ def parse_multipart_form_data(headers, rfile, content_length):
 
 class ImageHostingHandler(BaseHTTPRequestHandler):
     server_version = 'ImageHosting'
-    image_extensions = ['.jpg', '.jpeg', '.png', '.gif']
+
 
     routes_GET = {
         '/images': 'get_images',
@@ -139,7 +140,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         html_content = generate_gallery_page(image_files)
 
         self.send_response(200)
-        self.send_header('Content-Type', 'text/html')
+        self.send_header('Content-Type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(html_content.encode('utf-8'))
         return
@@ -165,7 +166,6 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         content_type = self.headers.get('Content-Type', '')
 
         if 'multipart/form-data' in content_type:
-
             try:
                 filename, file_content = parse_multipart_form_data(self.headers, self.rfile, content_length)
             except ValueError as e:
@@ -180,7 +180,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
         extension = filename.split('.')[-1]
 
-        if f".{extension}" not in ImageHostingHandler.image_extensions:
+        if f".{extension}" not in IMAGE_EXTENSION:
             logger.error(f"Ошибка: неподдерживаемый формат файла .{extension}.")
             self.send_response(400)  # Bad Request
             self.end_headers()
