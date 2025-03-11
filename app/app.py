@@ -33,8 +33,10 @@ def generate_upload_success_page(image_id, ext):
     html += '<h1 class="mb-4 text-center">Файл успешно загружен</h1>\n'
 
     # Миниатюра изображения
+    html += '<div class="text-center mb-4">\n'
     html += (f'<img src="/images/{image_id}.{ext}" alt="Загруженное изображение" '
              f'class="img-fluid mb-4" style="max-width: 300px; height: auto;">\n')
+    html += '</div>\n'
 
     # Группа кнопок
     html += '<div class="d-flex justify-content-center mb-3">\n'
