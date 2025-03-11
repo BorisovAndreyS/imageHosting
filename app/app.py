@@ -15,10 +15,20 @@ IMAGE_EXTENSION = ['.jpg', '.jpeg', '.png', '.gif']
 
 # Функция генерации HTML после успешной загрузки картинки
 def generate_upload_success_page(image_id, ext):
-    html = ('<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Успешная загрузка</title>\n</head>\n'
+    html = ('<!DOCTYPE html>\n'
+            '<html>\n'
+            '<head>\n'
+            '<meta charset="UTF-8">\n'
+            '<title>Успешная загрузка</title>\n'
+            '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"\n'
+            'integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">\n'
+            '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"\n'
+            'integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"\n'
+            'crossorigin="anonymous"></script>'
+            '</head>\n'
             '<body class="d-flex min-vh-100 justify-content-center align-items-center bg-light">\n')
     html += '<div class="content-box bg-white col-12 col-md-8 col-lg-6 p-4 rounded-3 shadow">'
-    html += '<h1>Файл успешно загружен</h1>\n'
+    html += '<h1 class="mb-4 text-center">Файл успешно загружен</h1>\n'
     html += '</div>'
     # Миниатюра изображения
     html += f'<img src="/images/{image_id}.{ext}" alt="Загруженная картинка" style="max-width: 300px; max-height: 300px;">\n'
