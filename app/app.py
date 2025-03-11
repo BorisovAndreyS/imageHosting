@@ -11,71 +11,69 @@ MAX_FILE_SIZE = 5 * 1024 * 1024  # 10 MB
 IMAGE_EXTENSION = ['.jpg', '.jpeg', '.png', '.gif']
 
 
-# SERVER_ADDR = ('0.0.0.0', 8000)
-
-
 # Функция генерации HTML после успешной загрузки картинки
 def generate_upload_success_page(image_id, ext):
-    html = ('<!DOCTYPE html>\n'
-            '<html>\n'
-            '<head>\n'
-            '<meta charset="UTF-8">\n'
-            '<title>Успешная загрузка</title>\n'
-            '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"\n'
-            'integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">\n'
-            '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"\n'
-            'integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"\n'
-            'crossorigin="anonymous"></script>'
-            '</head>\n'
-            '<body class="d-flex min-vh-100 justify-content-center align-items-center bg-light">\n')
-    html += '<div class="content-box justify-content-center bg-white col-12 col-md-8 col-lg-6 p-4 rounded-3 shadow">'
-    # Заголовок
-    html += '<h1 class="mb-4 text-center">Файл успешно загружен</h1>\n'
+    html = f'''
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Успешная загрузка</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</head>
+<body class="d-flex min-vh-100 justify-content-center align-items-center bg-light">
+<div class="content-box justify-content-center bg-white col-12 col-md-8 col-lg-6 p-4 rounded-3 shadow">
+    <h1 class="mb-4 text-center">Файл успешно загружен</h1>
 
-    # Миниатюра изображения
-    html += '<div class="text-center mb-4">\n'
-    html += (f'<img src="/images/{image_id}.{ext}" alt="Загруженное изображение" '
-             f'class="img-fluid mb-4" style="max-width: 300px; height: auto;">\n')
-    html += '</div>\n'
+    <!-- Миниатюра изображения -->
+    <div class="text-center mb-4">
+        <img src="/images/{image_id}.{ext}" alt="Загруженное изображение" 
+             class="img-fluid mb-4" style="max-width: 300px; height: auto;">
+    </div>
 
-    # Группа кнопок
-    html += '<div class="d-flex justify-content-center mb-3">\n'
-    html += f'<a href="/images/{image_id}.{ext}" download class="btn btn-primary me-2">Скачать</a>\n'
-    html += f'<a href="/upload" class="btn btn-outline-secondary me-2">Загрузить еще</a>\n'
-    html += '<a href="/images" class="btn btn-outline-secondary me-2">Каталог</a>\n'
-    html += '</div>\n'
+    <!-- Группа кнопок -->
+    <div class="d-flex justify-content-center mb-3">
+        <a href="/images/{image_id}.{ext}" download class="btn btn-primary me-2">Скачать</a>
+        <a href="/upload" class="btn btn-outline-secondary me-2">Загрузить еще</a>
+        <a href="/images" class="btn btn-outline-secondary me-2">Каталог</a>
+    </div>
 
-    # Ссылка для вставки (пустое поле, которое будет заполнено JavaScript)
-    html += '<div class="mb-3">\n'
-    html += '<label for="image-url" class="form-label">Ссылка для вставки:</label>\n'
-    html += f'<input type="text" id="image-url" class="form-control" value="/images/{image_id}.{ext}" readonly>\n'
-    html += '<button class="btn btn-sm btn-success mt-2 w-100" onclick="copyUrl()">Скопировать ссылку</button>\n'
-    html += '</div>\n'
+    <!-- Ссылка для вставки -->
+    <div class="mb-3">
+        <label for="image-url" class="form-label">Ссылка для вставки:</label>
+        <input type="text" id="image-url" class="form-control" value="/images/{image_id}.{ext}" readonly>
+        <button class="btn btn-sm btn-success mt-2 w-100" onclick="copyUrl()">Скопировать ссылку</button>
+    </div>
 
-    html += '<script>\n'
-    html += 'document.addEventListener("DOMContentLoaded", function() {\n'
-    html += '    const host = window.location.origin;\n'
-    html += '    const relativePath = document.getElementById("image-url").value;\n'
-    html += '    const fullPath = `${host}${relativePath}`;\n'
-    html += '    document.getElementById("image-url").value = fullPath;\n'
-    html += '});\n'
+    <!-- JavaScript для формирования полной ссылки и копирования -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {{
+            const host = window.location.origin;
+            const relativePath = document.getElementById("image-url").value;
+            const fullPath = `${{host}}${{relativePath}}`;
+            document.getElementById("image-url").value = fullPath;
+        }});
 
-    html += 'function copyUrl() {\n'
-    html += '  const input = document.getElementById("image-url");\n'
-    html += '  input.select();\n'
-    html += '  input.setSelectionRange(0, 99999); // Для мобильных устройств\n'
-    html += '  navigator.clipboard.writeText(input.value).then(() => {\n'
-    html += '      alert("Ссылка скопирована!");\n'
-    html += '  }).catch(err => {\n'
-    html += '      console.error("Не удалось скопировать ссылку: ", err);\n'
-    html += '  });\n'
-    html += '}\n'
+        function copyUrl() {{
+            const input = document.getElementById("image-url");
+            input.select();
+            input.setSelectionRange(0, 99999); // Для мобильных устройств
+            navigator.clipboard.writeText(input.value).then(() => {{
+                alert("Ссылка скопирована!");
+            }}).catch(err => {{
+                console.error("Не удалось скопировать ссылку: ", err);
+            }});
+        }}
+    </script>
+</div>
+</body>
+</html>
+'''
 
-    html += '</script>\n'
-
-    html += '</div>'
-
-    html += '</body>\n</html>'
     return html
 
 
@@ -123,6 +121,7 @@ def generate_gallery_page(image_files):
                     </div>
                 </div>
             </div>
+        
         '''
 
     html += '''
@@ -133,28 +132,6 @@ def generate_gallery_page(image_files):
     </html>
     '''
     return html
-# def generate_gallery_page(image_files):
-#     html = '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Image Gallery</title>\n</head>\n<body>\n'
-#     html += '<h1>Uploaded Images</h1>\n'
-#     html += '<a href="/" style="text-decoration: none;">\n'
-#     html += '  <button><p>Главная</p></button>\n'
-#     html += '</a>\n'
-#
-#
-#     html += '<div style="display: flex; flex-wrap: wrap;">\n'
-#
-#     for filename in image_files:
-#         html += f'<div style="margin: 10px; text-align: center;">\n'
-#         html += f'  <a href="/images/{filename}" target="_blank">\n'  # Используем относительный путь
-#         html += f'    <img src="/images/{filename}" alt="{filename}" style="max-width: 200px; max-height: 200px;">\n'
-#         html += f'  </a>\n'
-#         html += f'  <p>{filename}</p>\n'
-#         html += f'<p><a href="/images/{filename}" download>Скачать</a></p>\n'
-#         html += '</div>\n'
-#
-#     html += '</div>\n</body>\n</html>'
-#
-#     return html
 
 
 # Функция для формирования списка файлов
