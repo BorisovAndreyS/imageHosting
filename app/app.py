@@ -48,31 +48,19 @@ def generate_upload_success_page(image_id, ext):
     # Ссылка для вставки (пустое поле, которое будет заполнено JavaScript)
     html += '<div class="mb-3">\n'
     html += '<label for="image-url" class="form-label">Ссылка для вставки:</label>\n'
-    html += '<input type="text" id="image-url" class="form-control" readonly>\n'
-    html += '<button class="btn btn-sm btn-success mt-2 w-100" onclick="copyUrl()">Скопировать ссылку</button>\n'
+    f'<input type="text" id="image-url" class="form-control" value="/images/{image_id}.{ext}" readonly>\n'
     html += '</div>\n'
 
-    # Добавляем JavaScript для формирования ссылки и копирования
+    # Добавляем JavaScript для формирования ссылки
     html += '<script>\n'
     html += 'document.addEventListener("DOMContentLoaded", function() {\n'
     html += '  const imageUrlInput = document.getElementById("image-url");\n'
-    html += '  const imageId = window.location.pathname.split("/").pop(); // Получаем ID изображения\n'
-    html += '  const extension = imageId.split(".").pop(); // Получаем расширение\n'
+    # html += '  const imageId = window.location.pathname.split("/").pop(); // Получаем ID изображения\n'
+    # html += '  const extension = imageId.split(".").pop(); // Получаем расширение\n'
     html += '  const host = window.location.origin; // Текущий домен или IP\n'
-    html += '  const fullImageUrl = `${host}/images/${imageId}`;\n'
-    html += '  imageUrlInput.value = fullImageUrl; // Заполняем поле ссылкой\n'
+    # html += '  const fullImageUrl = `${host};\n'
+    html += '  imageUrlInput.value = host; // Заполняем поле ссылкой\n'
     html += '});\n'
-
-    html += 'function copyUrl() {\n'
-    html += '  const input = document.getElementById("image-url");\n'
-    html += '  input.select();\n'
-    html += '  input.setSelectionRange(0, 99999); // Для мобильных устройств\n'
-    html += '  navigator.clipboard.writeText(input.value).then(() => {\n'
-    html += '      alert("Ссылка скопирована!");\n'
-    html += '  }).catch(err => {\n'
-    html += '      console.error("Не удалось скопировать ссылку: ", err);\n'
-    html += '  });\n'
-    html += '}\n'
 
     html += '</script>\n'
 
