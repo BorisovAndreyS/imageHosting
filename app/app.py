@@ -9,7 +9,7 @@ logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {mes
 
 
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 10 MB
-
+IMAGE_EXTENSION = ['.jpg', '.jpeg', '.png', '.gif']
 # SERVER_ADDR = ('0.0.0.0', 8000)
 
 
