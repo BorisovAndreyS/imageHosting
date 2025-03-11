@@ -28,16 +28,28 @@ def generate_upload_success_page(image_id, ext):
             '</head>\n'
             '<body class="d-flex min-vh-100 justify-content-center align-items-center bg-light">\n')
     html += '<div class="content-box bg-white col-12 col-md-8 col-lg-6 p-4 rounded-3 shadow">'
+    # Заголовок
     html += '<h1 class="mb-4 text-center">Файл успешно загружен</h1>\n'
 
     # Миниатюра изображения
-    html += f'<img src="/images/{image_id}.{ext}" alt="Загруженная картинка" style="max-width: 300px; max-height: 300px;">\n'
+    html += (f'<img src="/images/{image_id}.{ext}" alt="Загруженное изображение" '
+             f'class="img-fluid mb-4" style="max-width: 300px; height: auto;">\n')
 
-    # Ссылка на скачивание
-    html += f'<p><a href="/images/{image_id}.{ext}" download>Скачать</a></p>\n'
+    # Группа кнопок
+    html += '<div class="d-flex justify-content-center mb-3">\n'
+    html += f'<a href="/images/{image_id}.{ext}" download class="btn btn-primary me-2">Скачать</a>\n'
+    html += f'<a href="/upload" class="btn btn-outline-secondary">Загрузить еще</a>\n'
+    html += '</div>\n'
 
     # Ссылка на галерею
-    html += '<p><a href="/images">Каталог</a></p>\n'
+    html += '<p class="text-center mb-4"><a href="/images" class="text-decoration-none">Каталог</a></p>\n'
+
+    # Ссылка для вставки
+    html += '<div class="mb-3">\n'
+    html += f'<input type="text" class="form-control" id="image-url" value="/images/{image_id}.{ext}" readonly>\n'
+    # html += '<button class="btn btn-sm btn-success mt-2" onclick="copyUrl()">Скопировать ссылку</button>\n'
+    html += '</div>\n'
+
     html += '</div>'
 
     html += '</body>\n</html>'
