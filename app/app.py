@@ -7,10 +7,10 @@ import socket
 
 logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {message}")
 
-# import logger - РАБОТАЕТ!!!!!
+
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 10 MB
 
-SERVER_ADDR = ('0.0.0.0', 8000)
+# SERVER_ADDR = ('0.0.0.0', 8000)
 
 
 # Функция генерации HTML после успешной загрузки картинки
