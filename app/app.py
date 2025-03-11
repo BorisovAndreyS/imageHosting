@@ -29,7 +29,7 @@ def generate_upload_success_page(image_id, ext):
             '<body class="d-flex min-vh-100 justify-content-center align-items-center bg-light">\n')
     html += '<div class="content-box bg-white col-12 col-md-8 col-lg-6 p-4 rounded-3 shadow">'
     html += '<h1 class="mb-4 text-center">Файл успешно загружен</h1>\n'
-    html += '</div>'
+
     # Миниатюра изображения
     html += f'<img src="/images/{image_id}.{ext}" alt="Загруженная картинка" style="max-width: 300px; max-height: 300px;">\n'
 
@@ -38,6 +38,7 @@ def generate_upload_success_page(image_id, ext):
 
     # Ссылка на галерею
     html += '<p><a href="/images">Каталог</a></p>\n'
+    html += '</div>'
 
     html += '</body>\n</html>'
     return html
