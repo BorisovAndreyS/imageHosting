@@ -52,15 +52,12 @@ def generate_upload_success_page(image_id, ext):
     html += '<button class="btn btn-sm btn-success mt-2 w-100" onclick="copyUrl()">Скопировать ссылку</button>\n'
     html += '</div>\n'
 
-    # Добавляем JavaScript для формирования ссылки и копирования
     html += '<script>\n'
     html += 'document.addEventListener("DOMContentLoaded", function() {\n'
-    html += '  const imageUrlInput = document.getElementById("image-url");\n'
-    html += '  const imageId = window.location.pathname.split("/").pop(); // Получаем ID изображения\n'
-    html += '  const extension = imageId.split(".").pop(); // Получаем расширение\n'
-    html += '  const host = window.location.origin; // Текущий домен или IP\n'
-    html += '  const fullImageUrl = `${host}/images/${imageId}`;\n'
-    html += '  imageUrlInput.value = host; // Заполняем поле ссылкой\n'
+    html += '    const host = window.location.origin;\n'
+    html += '    const relativePath = document.getElementById("image-url").value;\n'
+    html += '    const fullPath = `${host}${relativePath}`;\n'
+    html += '    document.getElementById("image-url").value = fullPath;\n'
     html += '});\n'
 
     html += 'function copyUrl() {\n'
