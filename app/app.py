@@ -60,7 +60,7 @@ def generate_upload_success_page(image_id, ext):
     html += '  const extension = imageId.split(".").pop(); // Получаем расширение\n'
     html += '  const host = window.location.origin; // Текущий домен или IP\n'
     html += '  const fullImageUrl = `${host}/images/${imageId}`;\n'
-    html += '  imageUrlInput.value = fullImageUrl; // Заполняем поле ссылкой\n'
+    html += '  imageUrlInput.value = host; // Заполняем поле ссылкой\n'
     html += '});\n'
 
     html += 'function copyUrl() {\n'
