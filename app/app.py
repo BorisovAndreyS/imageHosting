@@ -84,7 +84,7 @@ def generate_gallery_page(image_files):
             <div class="col">
                 <div class="card shadow-sm image-item">
                     <a href="/images/{filename}" target="_blank">
-                        <img src="" alt="{filename}" class="bd-placeholder-img card-img-top" style="object-fit: cover; 
+                        <img src="" alt="/images/{filename}" class="bd-placeholder-img card-img-top" style="object-fit: cover; 
                         height: 200px;">
                     </a>
                     <div class="card-body">
