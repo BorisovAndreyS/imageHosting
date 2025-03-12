@@ -192,7 +192,6 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
     }
 
     def do_GET(self):
-        logger.info(f'GET {self.path}')
         if self.path in self.routes_GET:
             exec(f'self.{self.routes_GET[self.path]}()')
         else:
@@ -200,7 +199,6 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             self.send_response(404, 'Not found')
 
     def do_POST(self):
-        logger.info(f'POST {self.path}')
         if self.path in self.routes_POST:
             exec(f'self.{self.routes_POST[self.path]}()')
         else:
@@ -229,7 +227,6 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         return
 
     def post_upload(self):
-        logger.info(f'POST {self.path}')
         content_length = int(self.headers.get('Content-Length', 0))
 
         if content_length == 0:
