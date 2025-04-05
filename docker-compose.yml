@@ -1,14 +1,19 @@
 networks:
   default:
     driver: bridge
+  db_network:
+    driver: bridge
 
 volumes:
   images:
   logs:
+  db_data:
 
 services:
   app:
     container_name: app
+    env_file:
+      - ./app/.env
     build: ./app
     ports:
       - "8000:8000"
@@ -17,6 +22,9 @@ services:
       - logs:/app/logs:rw
     networks:
       - default
+      - db_network
+    depends_on:
+      - db
 
   nginx:
     container_name: nginx
@@ -34,3 +42,30 @@ services:
 
     depends_on:
       - app
+
+  db:
+    image: postgres:latest
+    container_name: db
+    restart: always
+    networks:
+      - db_network
+    env_file:
+      - ./app/.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgres/data
+
+
+#  pgadmin:
+#    image: dpage/pgadmin4
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: 'teste@teste.com'
+#      PGADMIN_DEFAULT_PASSWORD: 'teste'
+#    ports:
+#      - 54320:80
+#    volumes:
+#      - ./servers.json:/pgadmin4/servers.json
+#    networks:
+#      - db_network
+

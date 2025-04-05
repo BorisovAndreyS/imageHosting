@@ -1,9 +1,10 @@
+import os
 import re
 import uuid
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from loguru import logger
 from pathlib import Path
-import socket
+from db.DBManager import DBManager
 
 logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {message}")
 
@@ -277,6 +278,14 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
 
 
 def run():
+    db = DBManager(os.getenv('POSTGRES_DB'),
+                   os.getenv('POSTGRES_USER'),
+                   os.getenv('POSTGRES_PASSWORD'),
+                   os.getenv('POSTGRES_HOST'),
+                   os.getenv('POSTGRES_PORT'))
+    db.init_tables()
+    logger.info(db.get_images())
+    db.execute("DROP TABLE IF EXISTS images")
     server_address = ('', 8000)
     httpd = HTTPServer(server_address, ImageHostingHandler)
     try:
