@@ -181,27 +181,35 @@ def parse_multipart_form_data(headers, rfile, content_length):
 
 
 class ImageHostingHandler(BaseHTTPRequestHandler):
+
     server_version = 'ImageHosting'
+    db = DBManager(os.getenv('POSTGRES_DB'),
+                   os.getenv('POSTGRES_USER'),
+                   os.getenv('POSTGRES_PASSWORD'),
+                   os.getenv('POSTGRES_HOST'),
+                   os.getenv('POSTGRES_PORT')
+                   )
 
-    routes_GET = {
-        '/images': 'get_images',
-        '/upload': 'get_upload',
-    }
-
-    routes_POST = {
-        '/upload': 'post_upload',
-    }
-
+    def setup(self):
+        super().setup()
+        self.get_routes = {
+            '/images': self.get_images,
+            '/upload': self.get_upload,
+        }
+        self.post_routes = {
+            '/upload': self.post_upload,
+        }
     def do_GET(self):
-        if self.path in self.routes_GET:
-            exec(f'self.{self.routes_GET[self.path]}()')
+
+        if self.path in self.get_routes:
+            self.get_routes[self.path]()
         else:
             logger.warning(f'GET 404 {self.path}')
             self.send_response(404, 'Not found')
 
     def do_POST(self):
-        if self.path in self.routes_POST:
-            exec(f'self.{self.routes_POST[self.path]}()')
+        if self.path in self.post_routes:
+            self.post_routes[self.path]()
         else:
             self.send_response(404)
             logger.warning(f'POST 404 {self.path}')
@@ -224,7 +232,7 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-Type', 'text/html; charset=utf-8')
         self.end_headers()
-        self.wfile.write(open('upload.html', 'rb').read())
+        self.wfile.write(open('static/upload.html', 'rb').read())
         return
 
     def post_upload(self):
@@ -236,12 +244,12 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             self.end_headers()
             return
 
-        # Проверяем Content-Type, через форму должен прйти multipart/form-data
+        # Проверяем Content-Type, через форму должен прийти multipart/form-data
         content_type = self.headers.get('Content-Type', '')
 
         if 'multipart/form-data' in content_type:
             try:
-                filename, file_content = parse_multipart_form_data(self.headers, self.rfile, content_length)
+                orig_name, file_content = parse_multipart_form_data(self.headers, self.rfile, content_length)
             except ValueError as e:
                 logger.error(f"Error parsing multipart/form-data: {e}")
                 self.send_response(400)  # Bad Request
@@ -250,9 +258,9 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
         else:
             # Прямое чтение бинарных данных
             file_content = self.rfile.read(content_length)
-            filename = None
+            orig_name = None
 
-        extension = filename.split('.')[-1]
+        extension = orig_name.split('.')[-1]
 
         if f".{extension}" not in IMAGE_EXTENSION:
             logger.error(f"Ошибка: неподдерживаемый формат файла .{extension}.")
@@ -260,14 +268,20 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             self.end_headers()
             return
 
-        image_id = uuid.uuid4()
+        filename = uuid.uuid4()
 
-        with open(f'images/{image_id}.{extension}', 'wb') as f:
+        file_size_kb = round(content_length / 1024)
+
+        # #Запишем данные в таблицу
+
+        self.db.add_image(filename, orig_name, file_size_kb, extension)
+
+        with open(f'images/{filename}.{extension}', 'wb') as f:
             f.write(file_content)
 
-        logger.info(f'Успех: Изображение {image_id}.{extension} загружено')
+        logger.info(f'Успех: Изображение {filename}.{extension} загружено')
         # Генерируем HTML-страницу с миниатюрой и ссылками
-        html_content = generate_upload_success_page(image_id, extension)
+        html_content = generate_upload_success_page(filename, extension)
 
         # Отправляем HTML-страницу в ответ
         self.send_response(200)  # OK
@@ -283,9 +297,11 @@ def run():
                    os.getenv('POSTGRES_PASSWORD'),
                    os.getenv('POSTGRES_HOST'),
                    os.getenv('POSTGRES_PORT'))
+    # db.connect()
     db.init_tables()
+    # logger.info(db.get_images())
     logger.info(db.get_images())
-    db.execute("DROP TABLE IF EXISTS images")
+    # db.close()
     server_address = ('', 8000)
     httpd = HTTPServer(server_address, ImageHostingHandler)
     try:
