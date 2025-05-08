@@ -5,6 +5,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from loguru import logger
 from pathlib import Path
 from db.DBManager import DBManager
+import json
 
 logger.add('logs/app.log', format="[{time:YYYY-MM-DD HH:mm:ss}] | {level} | {message}")
 
@@ -12,7 +13,7 @@ MAX_FILE_SIZE = 5 * 1024 * 1024  # 10 MB
 IMAGE_EXTENSION = ['.jpg', '.jpeg', '.png', '.gif']
 
 
-# Функция генерации HTML после успешной загрузки картинки
+# Функция генерации HTML после успешной загрузки картинки - Это переделать!!!!
 def generate_upload_success_page(image_id, ext):
     html = f'''
 <!DOCTYPE html>
@@ -40,7 +41,7 @@ def generate_upload_success_page(image_id, ext):
     <div class="d-flex justify-content-center mb-3">
         <a href="/images/{image_id}.{ext}" download class="btn btn-primary me-2">Скачать</a>
         <a href="/upload" class="btn btn-outline-secondary me-2">Загрузить еще</a>
-        <a href="/images" class="btn btn-outline-secondary me-2">Каталог</a>
+        <a href="/all_images" class="btn btn-outline-secondary me-2">Каталог</a>
     </div>
 
     <!-- Ссылка для вставки -->
@@ -78,7 +79,7 @@ def generate_upload_success_page(image_id, ext):
     return html
 
 
-# Функция для генерации HTML страницы каталога
+# Функция для генерации HTML страницы каталога в новой версии не актуально!
 def generate_gallery_page(image_files):
     html = '''<!DOCTYPE html>
     <html lang="ru">
@@ -181,7 +182,6 @@ def parse_multipart_form_data(headers, rfile, content_length):
 
 
 class ImageHostingHandler(BaseHTTPRequestHandler):
-
     server_version = 'ImageHosting'
     db = DBManager(os.getenv('POSTGRES_DB'),
                    os.getenv('POSTGRES_USER'),
@@ -193,14 +193,17 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
     def setup(self):
         super().setup()
         self.get_routes = {
-            '/images': self.get_images,
+            # '/images': self.get_images,
             '/upload': self.get_upload,
+            '/api/all_images/': self.get_all_images,
+            '/api/images-list/': self.get_images_list,
         }
         self.post_routes = {
             '/upload': self.post_upload,
         }
-    def do_GET(self):
 
+    def do_GET(self):
+        logger.info(f'self path {self.path}')
         if self.path in self.get_routes:
             self.get_routes[self.path]()
         else:
@@ -216,17 +219,72 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'Not Found')
 
-    def get_images(self):
-        directory = 'images'
-        image_files, image_extension = get_image_files(directory)
+    # def get_images(self):
+    #     directory = 'images'
+    #     image_files, image_extension = get_image_files(directory)
+    #
+    #     html_content = generate_gallery_page(image_files)
+    #
+    #     self.send_response(200)
+    #     self.send_header('Content-Type', 'text/html; charset=utf-8')
+    #     self.end_headers()
+    #     self.wfile.write(html_content.encode('utf-8'))
+    #     return
 
-        html_content = generate_gallery_page(image_files)
+    #Сейчас формируется через список файлов в папке изображений,
+    # надо чтобы формировал через базу данных
+    def get_all_images(self):
+        try:
+            logger.info(f'Get {self.path}')
+            directory = 'images'
 
-        self.send_response(200)
-        self.send_header('Content-Type', 'text/html; charset=utf-8')
-        self.end_headers()
-        self.wfile.write(html_content.encode('utf-8'))
-        return
+            # запрос данных
+            image_files, image_extension = get_image_files(directory)
+
+            # logger.info(f'Image files^:::: {image_files}')
+
+            # Формируем JSON
+            data = {"images": image_files}
+            json_data = json.dumps(data, ensure_ascii=False).encode('utf-8')
+
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+
+            self.wfile.write(json_data)
+        except Exception as e:
+            # Логируем ошибку
+            logger.error(f"Error in get_all_images: {str(e)}")
+
+            # Возвращаем JSON-ошибку клиенту
+            error_data = {"error": "Internal server error"}
+            json_error = json.dumps(error_data).encode('utf-8')
+
+            self.send_response(500)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(json_error)
+    def get_images_list(self):
+        try:
+            logger.info(f'Пришел запрос {self.path}')
+            list_images = self.db.get_images()
+            # logger.info(f'List images: {list_images}')
+            json_data = json.dumps(list_images, ensure_ascii=False, indent=4)
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+
+            self.wfile.write(json_data.encode('utf-8'))
+        except Exception as e:
+            logger.error(f'get_images_list Error {e}')
+            # Возвращаем JSON-ошибку клиенту
+            error_data = {"error": "Internal server error"}
+            json_error = json.dumps(error_data).encode('utf-8')
+
+            self.send_response(500)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(json_error)
 
     def get_upload(self):
         self.send_response(200)
@@ -300,7 +358,7 @@ def run():
     # db.connect()
     db.init_tables()
     # logger.info(db.get_images())
-    logger.info(db.get_images())
+    # logger.info(db.get_images())
     # db.close()
     server_address = ('', 8000)
     httpd = HTTPServer(server_address, ImageHostingHandler)

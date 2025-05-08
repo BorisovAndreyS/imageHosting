@@ -1,3 +1,4 @@
+import datetime
 import psycopg
 from loguru import logger
 
@@ -46,9 +47,30 @@ class DBManager:
         self.conn.commit()
     # #
     def get_images(self):
+        self.conn = self.connect()
         with self.conn.cursor() as cursor:
+            # Выполняем запрос к таблице images
             cursor.execute("SELECT * FROM images")
-            return cursor.fetchall()
+
+            # Получаем имена столбцов
+            column_names = [desc[0] for desc in cursor.description]
+
+            # Получаем данные
+            rows = cursor.fetchall()
+
+            # Преобразуем данные в список словарей
+            result = []
+
+            for row in rows:
+                row_dict = dict(zip(column_names, row))
+
+                for key, val in row_dict.items():
+                    # logger.info(type(val))
+                    if type(val) == datetime.datetime:
+                        row_dict[key] = val.isoformat()
+                result.append(row_dict)
+            return result
+            # return cursor.fetchall()
     # #
     def add_image(self, filename, orig_name, file_size_kb, ext):
         logger.info(f'Try to add image {filename}')
