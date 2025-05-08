@@ -1,4 +1,6 @@
 import datetime
+import os
+
 import psycopg
 from loguru import logger
 
@@ -12,7 +14,7 @@ class DBManager:
         self.host = host
         self.port = port
 
-    # Метод Connect вызывается и возвращает объект psycopg.Connection, но кто его должен вызвать?
+    # Метод Connect вызывается и возвращает объект psycopg.Connection
     def connect(self) -> psycopg.Connection:
         self.conn = psycopg.connect(
             dbname=self.dbname,
@@ -22,9 +24,6 @@ class DBManager:
             port=self.port
         )
         return self.conn
-
-    # def close(self):
-    #     self.conn.close()
 
     def init_tables(self):
         self.execute_file('db/queries/init_data.sql')
@@ -39,18 +38,18 @@ class DBManager:
             logger.error(f'File {filename} not found')
 
     def execute(self, query: str):
-        # if self.conn is None:
-        #     logger.error('No connection DB')
+
         self.conn = self.connect()
         with self.conn.cursor() as cursor:
             cursor.execute(query)
         self.conn.commit()
-    # #
+
+    # Метод делает запрос всех изображений в базе Images и возвращает
     def get_images(self):
         self.conn = self.connect()
         with self.conn.cursor() as cursor:
             # Выполняем запрос к таблице images
-            cursor.execute("SELECT * FROM images")
+            cursor.execute("SELECT * FROM images ORDER BY upload_time DESC")
 
             # Получаем имена столбцов
             column_names = [desc[0] for desc in cursor.description]
@@ -65,13 +64,12 @@ class DBManager:
                 row_dict = dict(zip(column_names, row))
 
                 for key, val in row_dict.items():
-                    # logger.info(type(val))
                     if type(val) == datetime.datetime:
-                        row_dict[key] = val.isoformat()
+                        row_dict[key] = val.strftime('%Y-%m-%d %H:%M:%S')
                 result.append(row_dict)
             return result
-            # return cursor.fetchall()
-    # #
+
+    # метод добавляет изображение в базу данных
     def add_image(self, filename, orig_name, file_size_kb, ext):
         logger.info(f'Try to add image {filename}')
         self.conn = self.connect()
@@ -84,3 +82,43 @@ class DBManager:
             )
         self.conn.commit()
 
+    # метод удаляет изображение из базы данных и диск
+    def delete_image(self, id):
+        logger.info(f'Началось удаление изображения с id: {id}')
+
+        try:
+            self.conn = self.connect()
+
+            # ищем запись в таблице
+            with self.conn.cursor() as cursor:
+                cursor.execute("SELECT filename, file_type FROM images WHERE id = %s", (id,))
+
+                # Получаем данные
+                rows = cursor.fetchone()
+
+                filename, file_type = rows
+
+            self.conn.commit()
+
+            # удаляем файл на диске
+            file_path = f"images/{filename}.{file_type}"
+            if os.path.exists(file_path):
+                os.remove(file_path)
+                logger.info(f"Файл с именем : {file_path} успешно удален")
+            else:
+                logger.info(f"Файл не найден : {file_path}")
+
+            # удаляем запись в базе данных
+            with self.conn.cursor() as cursor:
+                cursor.execute("DELETE FROM images WHERE id = %s", (id,))
+
+                self.conn.commit()
+                logger.info(f'Запись с ID {id} успешно удалена из базы данных')
+        except Exception as e:
+            logger.error(f"Ошибка при удалении изображения {str(e)}")
+            self.conn.rollback()
+            raise
+
+        finally:
+            if self.conn:
+                self.conn.close()

@@ -26,12 +26,12 @@ function renderTable(){
 
     //Вычисляем диапазон эдементов для текущей страницы
     const start = (currentPage - 1) * itemsPerPage;
-    console.log('start ' ,start)
-    console.log('currentPage ', currentPage)
+//    console.log('start ' ,start)
+//    console.log('currentPage ', currentPage)
     const end = currentPage * itemsPerPage;
-    console.log('end', end)
+//    console.log('end', end)
     const currentItems = imagesData.slice(start, end);
-    console.log('currentItems', currentItems)
+//    console.log('currentItems', currentItems)
 
     //Создание строк таблицы
     currentItems.forEach(image => {
@@ -51,10 +51,15 @@ function renderTable(){
         const urlCell = document.createElement('td');
         const link = document.createElement('a');
         link.href = imageUrl;
-        link.textContent = imageUrl;
+        link.textContent = image.filename;
         link.target = '_blank';
         urlCell.appendChild(link);
         row.appendChild(urlCell);
+
+        //Orig name
+        const origName = document.createElement('td');
+        origName.textContent = image.original_name;
+        row.appendChild(origName);
 
         //Size
         const sizeCell = document.createElement('td');
@@ -65,6 +70,11 @@ function renderTable(){
         const dateCell = document.createElement('td');
         dateCell.textContent = image.upload_time;
         row.appendChild(dateCell);
+
+        //TypeFile
+        const TypeFileCell = document.createElement('td');
+        TypeFileCell.textContent = image.file_type;
+        row.appendChild(TypeFileCell);
 
         //Delete
         const deleteCell = document.createElement('td');
@@ -88,7 +98,7 @@ function updatePaginationControls(){
     const totalPages = Math.ceil(imagesData.length / itemsPerPage);
     document.getElementById('prevPage').disabled = currentPage === 1;
     document.getElementById('nextPage').disabled = currentPage === totalPages;
-    document.getElementById('cureentPage').textContent = currentPage;
+    document.getElementById('currentPage').textContent = currentPage;
 }
 
 document.getElementById('prevPage').addEventListener('click', () => {
@@ -109,6 +119,15 @@ document.getElementById('nextPage').addEventListener('click', () => {
 //тут происходит удаление из Fronta, но не происходит удаление из базы данных и файлов
 function deleteImage(id) {
     imagesData = imagesData.filter(image => image.id !== id);
+    fetch(`/api/delete/${id}`, { method: 'DELETE' })
+        .then(response => {
+        if (response.ok) {
+            console.log(`${id} успешно удален`);
+        } else {
+            console.error(`Ошибка при удалении ${id}`);
+        }
+    })
+    .catch(error => console.error('Ошибка:', error));
     renderTable();
 }
 

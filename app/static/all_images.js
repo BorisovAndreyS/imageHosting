@@ -1,5 +1,8 @@
+//Глобальные переменные
+let imagesData = [] //Все изображения
+
 // Функция для создания карточки изображения
-function createImageCard(filename) {
+function createImageCard(fileData) {
     const col = document.createElement('div');
     col.className = 'col';
 
@@ -7,12 +10,12 @@ function createImageCard(filename) {
     card.className = 'card shadow-sm image-item';
 
     const link = document.createElement('a');
-    link.href = `/images/${filename}`;
+    link.href = `/images/${fileData.filename}.${fileData.file_type}`;
     link.target = '_blank';
 
     const img = document.createElement('img');
-    img.src = `/images/${filename}`;
-    img.alt = filename;
+    img.src = `/images/${fileData.filename}.${fileData.file_type}`;
+    img.alt = fileData.filename;
     img.className = 'bd-placeholder-img card-img-top';
     img.style.objectFit = 'cover';
     img.style.height = '200px';
@@ -22,15 +25,15 @@ function createImageCard(filename) {
 
     const text = document.createElement('p');
     text.className = 'card-text text-center';
-    text.textContent = filename;
+    text.textContent = fileData.filename;
 
     const downloadBtnWrapper = document.createElement('div');
     downloadBtnWrapper.className = 'd-flex justify-content-center align-items-center';
 
     const downloadBtn = document.createElement('a');
     downloadBtn.className = 'btn btn-sm btn-outline-secondary';
-    downloadBtn.href = `/images/${filename}`;
-    downloadBtn.download = filename;
+    downloadBtn.href = `/images/${fileData.filename}.${fileData.file_type}`;
+    downloadBtn.download = fileData.filename;
     downloadBtn.textContent = 'Скачать';
 
     // Сборка структуры
@@ -43,6 +46,22 @@ function createImageCard(filename) {
     return col;
 }
 
+//async function fetchImages(){
+//    try{
+//        const response = await fetch('/api/images-list/');
+//        console.log(response);
+//        if (!response.ok) throw new error('Ошибка загрузки изображений');
+//        imagesData = await response.json();
+//
+//        createImageCard();
+//        }
+//    catch (error) {
+//        console.error()
+//                  }
+//    }
+//}
+
+
 // Использование
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/api/all_images/')
@@ -51,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('imageContainer');
             const fragment = document.createDocumentFragment();
 
-            data.images.forEach(filename => {
-                fragment.appendChild(createImageCard(filename));
+            data.forEach(fileData => {
+                fragment.appendChild(createImageCard(fileData));
             });
 
             container.replaceChildren(fragment);

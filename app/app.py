@@ -1,5 +1,6 @@
 import os
 import re
+import urllib
 import uuid
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from loguru import logger
@@ -79,76 +80,8 @@ def generate_upload_success_page(image_id, ext):
     return html
 
 
-# Функция для генерации HTML страницы каталога в новой версии не актуально!
-def generate_gallery_page(image_files):
-    html = '''<!DOCTYPE html>
-    <html lang="ru">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Image Gallery</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .image-item {
-            transition: transform 0.2s; /* Добавляем плавную анимацию при наведении */
-        }
-
-        .image-item:hover {
-            transform: scale(1.05); /* Увеличиваем масштаб элемента при наведении */
-        }
-    </style>
-    </head>
-    <body class="bg-light">
-    <div class="container py-5">
-        <h1 class="text-center mb-4">Загруженные изображения</h1>
-        <div class="text-center mb-3">
-            <a href="/" class="btn btn-primary">Главная</a>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    '''
-
-    for filename in image_files:
-        html += f'''
-            <div class="col">
-                <div class="card shadow-sm image-item">
-                    <a href="/images/{filename}" target="_blank">
-                        <img src="/images/{filename}" alt="{filename}" class="bd-placeholder-img card-img-top" style="object-fit: cover;
-                        height: 200px;">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text text-center">{filename}</p>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <a href="/images/{filename}" download class="btn btn-sm btn-outline-secondary">Скачать</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-        '''
-
-    html += '''
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    </html>
-    '''
-    return html
-
-
-# Функция для формирования списка файлов
-def get_image_files(directory):
-    image_extensions = ''
-    image_files = []
-
-    for file_path in Path(directory).iterdir():
-        if file_path.is_file() and file_path.suffix.lower() in IMAGE_EXTENSION:
-            image_files.append(file_path.name)
-
-    return image_files, image_extensions
-
-
 # Парсер для распаковки multipart/form-data данных отправленных с формы
+# парсер нужен 100%
 def parse_multipart_form_data(headers, rfile, content_length):
     content_type = headers.get('Content-Type', '')
     if 'multipart/form-data' not in content_type:
@@ -193,17 +126,37 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
     def setup(self):
         super().setup()
         self.get_routes = {
-            # '/images': self.get_images,
             '/upload': self.get_upload,
-            '/api/all_images/': self.get_all_images,
+            '/api/all_images/': self.get_images_list,
             '/api/images-list/': self.get_images_list,
         }
+
         self.post_routes = {
             '/upload': self.post_upload,
         }
 
-    def do_GET(self):
+        self.delete_routes = {
+            '/api/delete/': self.delete_images,
+        }
+
+    def do_DELETE(self):
         logger.info(f'self path {self.path}')
+        # Проверяем, соответствует ли путь одному из ключей в delete_routes
+        for route, handler in self.delete_routes.items():
+            if self.path.startswith(route):
+                # logger.info('УРАА МЫ ТУТ!!!')
+                handler()
+                return
+
+    def delete_images(self):
+        logger.info(f'Попали в delete_images для пути: {self.path}')
+
+        path_parts = self.path.split('/')
+        image_id = path_parts[3]
+
+        self.db.delete_image(image_id)
+
+    def do_GET(self):
         if self.path in self.get_routes:
             self.get_routes[self.path]()
         else:
@@ -219,54 +172,9 @@ class ImageHostingHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'Not Found')
 
-    # def get_images(self):
-    #     directory = 'images'
-    #     image_files, image_extension = get_image_files(directory)
-    #
-    #     html_content = generate_gallery_page(image_files)
-    #
-    #     self.send_response(200)
-    #     self.send_header('Content-Type', 'text/html; charset=utf-8')
-    #     self.end_headers()
-    #     self.wfile.write(html_content.encode('utf-8'))
-    #     return
-
-    #Сейчас формируется через список файлов в папке изображений,
-    # надо чтобы формировал через базу данных
-    def get_all_images(self):
-        try:
-            logger.info(f'Get {self.path}')
-            directory = 'images'
-
-            # запрос данных
-            image_files, image_extension = get_image_files(directory)
-
-            # logger.info(f'Image files^:::: {image_files}')
-
-            # Формируем JSON
-            data = {"images": image_files}
-            json_data = json.dumps(data, ensure_ascii=False).encode('utf-8')
-
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
-
-            self.wfile.write(json_data)
-        except Exception as e:
-            # Логируем ошибку
-            logger.error(f"Error in get_all_images: {str(e)}")
-
-            # Возвращаем JSON-ошибку клиенту
-            error_data = {"error": "Internal server error"}
-            json_error = json.dumps(error_data).encode('utf-8')
-
-            self.send_response(500)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
-            self.wfile.write(json_error)
     def get_images_list(self):
         try:
-            logger.info(f'Пришел запрос {self.path}')
+            # logger.info(f'Пришел запрос {self.path}')
             list_images = self.db.get_images()
             # logger.info(f'List images: {list_images}')
             json_data = json.dumps(list_images, ensure_ascii=False, indent=4)
