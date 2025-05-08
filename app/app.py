@@ -43,6 +43,8 @@ def generate_upload_success_page(image_id, ext):
         <a href="/images/{image_id}.{ext}" download class="btn btn-primary me-2">Скачать</a>
         <a href="/upload" class="btn btn-outline-secondary me-2">Загрузить еще</a>
         <a href="/all_images" class="btn btn-outline-secondary me-2">Каталог</a>
+        <a href="/images-list" class="btn btn-outline-secondary me-2">Таблица
+            изображений</a>
     </div>
 
     <!-- Ссылка для вставки -->
